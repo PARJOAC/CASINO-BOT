@@ -1,0 +1,231 @@
+{
+  "noCommands": "❌  Aucune commande disponible.",
+  "userNotHaveAccount": "❌  Vous n'avez pas encore de compte! Veuillez en créer un premier.",
+  "userNotHaveAccountDaily": "❌  Vous n'avez toujours pas de compte! Veuillez d'abord obtenir un équilibre.",
+  "errorCommand": "❌  Il y a eu une erreur lors de l'exécution de cette commande!\n\nVeuillez le signaler sur https://discord.com/invite/p8CDnWHZJq",
+  "onlyCreatorBot": "❌  Seul le Bot Creator a la permission de faire cette commande",
+  "succesfulAddMoneyTitle": "💸 Argent Ajouté!",
+  "succesfulAddMoneyContent": "{amount} 💰 a été ajouté à la balance de {user}.",
+  "userNotFoundOnDataBaseTitle": "❌  Erreur",
+  "userNotFoundOnDataBaseContent": "❌  Utilisateur <@{user}> introuvable dans la base de données.",
+  "succesfulDeletedUserTitle": "✅ Succès",
+  "succesfulDeletedUserContent": "✅ L'utilisateur <@{user}> a été supprimé avec succès de la base de données.",
+  "amountErrorNumberTitle": "❌  Erreur",
+  "amountErrorNegativeNumberContent": "❌  Le montant doit être un nombre positif.",
+  "userNotHaveMoney": "❌  L'utilisateur n'a pas assez d'équilibre pour supprimer ce montant.",
+  "moneyRemovedTitle": "✅ Argent Retiré",
+  "succesfulRemoveMoney": "{amount} 💰 a été retiré avec succès de la balance de {user}.",
+  "cooldownActiveTitle": "⏳ Votre est sur Cooldown!",
+  "cooldownTimeContent": "❌ Vous devez attendre **{hours}h {minutes}m {seconds}** avant de collecter à nouveau votre récompense quotidienne.",
+  "cooldownActiveSecondsContent": "❌ Vous devez attendre {seconds} secondes avant de jouer à la roulette à nouveau",
+  "dailyRewardTitle": "✅ Récompense Quotidienne Recueillie!",
+  "dailyRewardContent": "Vous avez collecté **{amount} 💰** pièces de monnaie!",
+  "nothingToSellTitle": "❌ Erreur",
+  "nothingToSellContent": "❌ Vous n'avez pas d'articles à vendre.",
+  "errorBalloonSellTitle": "❌ Erreur",
+  "errorBalloonSellContent": "❌ Vous n'avez pas assez de ballons. Vous avez seulement {balloon}.",
+  "errorMobileSellTitle": "❌ Erreur",
+  "errorMobileSellContent": "❌ Vous n'avez pas assez de mobiles. Vous avez seulement {mobile}.",
+  "succesfulSellTitle": "✅ Vente Réussi!",
+  "succesfulSellContent": "Vous avez vendu {quantity} {item} pour {amount} 💰.",
+  "succesfulSellFiledTitle": "✅ Nouveau Balance",
+  "balloonTitle": "🎈 Ballons",
+  "mobileTitle": "📱 Mobiles",
+  "errorMaxBetTitle": "❌ Erreur - Max Bet",
+  "errorMaxBetContent": "❌ La mise maximale pour le niveau **{level}** est de **{number} 🪙**. Entrez une mise inférieure et réessayez.",
+  "errorEnoughMoneyTitle": "❌ Erreur",
+  "errorEnoughMoneyContent": "❌ Vous n'avez pas assez d'argent pour placer ce pari.",
+  "cashOutButton": "Cash Out 🛑",
+  "crashTitleOnPlaying": "CRASH 💥",
+  "crashContentOnPlaying": "Multiplicateur:\n**x{multiplier}**",
+  "crashLoseTitle": "CRASH 💥 - Tu as Perdu!",
+  "crashLostContent": "Votre pari: **{amount} 🪙**\n\nMultiplicateur:\n**x{multiplier}**\n\nÉCRASÉ!\n\nPerdu: **{amount} 🪙**\n\nVotre argent: **{balance} 🪙**",
+  "crashWinTitle": "CRASH 💥 - Tu as encaissé!",
+  "crashWinContent": "Votre pari: **{amount} 🪙**\n\nMultiplicateur:\n**x{multiplier}**\n\nVous avez gagné: **{won}**\n\nVotre argent: **{cash} 🪙**",
+  "horseStartingTitle": "🏇 Horse Race - À partir de bientôt!",
+  "horseStartingContent": "⏳ La course est sur le point de commencer! Veuillez patienter un moment...",
+  "horseIsWin": "Race - Vous {wonLose}",
+  "hoseWin": "Gagné! 🎉",
+  "horseLost": "Perdre! ❌",
+  "yourBet": "Votre pari:",
+  "yourBetWithCoin": "Votre pari: {amount} 🪙",
+  "yourRace": "Votre Racer:",
+  "yourCash": "Votre argent:",
+  "youLostOnly": "Perdu:",
+  "yourPrediction": "Votre Prédiction:",
+  "raceResult": "Résultat de Course:",
+  "raceResultContent": "Racer {number} GAGNÉ! 🎉",
+  "congratulations": "Félicitations! 💸",
+  "youWon": "Vous avez gagné {won} 🪙!",
+  "youLost": "Tu as perdu {amount} 🪙",
+  "xpGained": "XP Gagné:",
+  "sorry": "Désolé!",
+  "rouletteSpiningTitle": "🎡 Roulette - Spinning...",
+  "rouletteSpiningContent": "🎡 La balle tourne.. Veuillez patienter! 🎡",
+  "roulleteIsWin": "🎡 Roulette - Vous {wonLose}",
+  "rouletteWin": "Gagné! 🎉",
+  "rouletteLost": "Perdu! ❌",
+  "rouletteBallLandedTitle": "Ball a atterri:",
+  "rouletteBallLandedContent": "{result} ({resultColor})",
+  "rouletteColorRed": "**🟥 ROUGE**",
+  "rouletteColorBlack": "**⬛ NOIR**",
+  "rouletteColorGreen": "**🟩 VERT**",
+  "rouletteYouWon": "Vous avez Gagné! 🎉",
+  "wonBalloon": "Vous avez également gagné un ballon 🎈!",
+  "wonMobile": "Vous avez également gagné un mobile 📱!",
+  "slotSpinTitle": "🎰 Machine à sous Spin!",
+  "slotSpinResultWin": "🎉 Vous gagnez! Vous avez gagné: **{result} 🪙**.",
+  "slotSpinResultLost": "😢 Tu perds! Meilleure chance la prochaine fois!",
+  "resultSpin": "Résultat",
+  "buyItemTitle": "🛒 Stocker des Articles 🛒",
+  "invalidItemSelect": "❌ Invalide élément sélectionné.",
+  "errorNotEnoughMoneyToBuyTitle": "❌ Erreur",
+  "errorNotEnoughMoneyToBuyContent": "❌ Vous n'avez pas assez d'argent pour acheter cet article.",
+  "purchaseSucTitle": "✅ Achat Réussi!",
+  "purchaseSucContent": "Vous avez acheté {amount} {item} pour {totalCost} 💰.",
+  "deleteAccountStep1": "Êtes-vous sûr de vouloir supprimer votre compte? Veuillez taper **confirm** pour continuer.",
+  "deleteAccountStep2": "Vous avez confirmé. Veuillez saisir à nouveau **confirm** pour supprimer définitivement votre compte.",
+  "deletedAccountSuc": "✅ Votre compte a été supprimé avec succès. Toutes les données sont supprimées de façon permanente.",
+  "deletedAccountTimeOut": "❌ Confirmation chronométrée. Votre compte n'a pas été supprimé.",
+  "giftAccountNotExistTitle": "❌ Erreur",
+  "giftAccountNotExistContent": "❌ Le destinataire n'a pas de compte.",
+  "giftSenderNotHaveMoneyTitle": "❌ Erreur",
+  "giftSenderNotHaveMoneyContent": "❌ Vous n'avez pas assez d'argent pour offrir ce montant.",
+  "giftSucTitle": "✅ Cadeau Réussi",
+  "giftSucContent": "Vous avez donné avec succès {amount} 💰 à {user}.",
+  "inventoryName1": "Drapeau Espagnol",
+  "inventoryName2": "Amoureux",
+  "inventoryName3": "Paella",
+  "inventoryName4": "Vin",
+  "inventoryName5": "Chapeau",
+  "inventoryName6": "Balle de Football",
+  "inventoryName7": "Ham",
+  "inventoryName8": "Guitare",
+  "inventoryName9": "Torero",
+  "inventoryName10": "Flamenco",
+  "inventoryName11": "Snap",
+  "inventoryName12": "Cava",
+  "inventoryName13": "Castanets",
+  "inventoryName14": "Sagrada Familia",
+  "inventoryName15": "Soleil",
+  "inventoryTitle": "Inventaire de {user} 📦",
+  "inventoryEmpty": "❌ Cet inventaire est vide.",
+  "cash": "Cash",
+  "level": "Niveau",
+  "experience": "Expérience",
+  "progressLevel": "Progrès au niveau suivant:",
+  "errorNotPlayerFound": "❌ Aucun joueur trouvé dans la base de données",
+  "topTitle": "🏆 Top 10 - {category}",
+  "moneyTitle": "Argent 💰",
+  "levelTitle": "Niveau 🎮",
+  "requestedBy": "Demandé par {user}",
+  "unknownTopPlayer": "❌ Un joueur inconnu",
+  "top10Content": "**#{topNumber}** - {user}: {category}",
+  "topLevelContent": "Niveau {level}",
+  "succesfulChangeLanguage": "✅ La langue a été changée avec succès en {language}.",
+  "sameLang": "❌ La langue ne peut pas être la même que ce qui est déjà établi.",
+  "rock": "🪨 Rock",
+  "paper": "📄 Papier",
+  "scissors": "✂️ Ciseaux",
+  "chooseMove": "⏳ Choisissez votre déménagement!",
+  "tie": "C'est une cravate! 🤝",
+  "win": "Vous gagnez! 🎉",
+  "lose": "Tu perds! 😢",
+  "finalContent": "Vous avez choisi: **{userChoice}**\nBot a choisi: **{botChoice}**\n\n**{result}**\n\nVous pariez: **{bet} 💰**\nVotre équilibre: **{balance} 🪙**",
+  "timeEnd": "❌ Le temps est écoulé! Tu n'as pas fait de choix.",
+  "profileTitle": "👤 Profil de {user}",
+  "suggestTitle": "📩 Nouvelle Suggestion!",
+  "suggestContent": "a envoyé la suggestion suivante:",
+  "suggestSuccess": "✅ Votre suggestion a été envoyée avec succès!",
+  "suggestErrorChannel": "❌ Le canal de support n'est pas configuré ou n'a pas été trouvé.",
+  "commands": {
+    "deleteuser": {
+      "name": "deleteuser",
+      "description": "🗑️ Supprimer un utilisateur de la base de données (bot créateur uniquement)"
+    },
+    "addmoney": {
+      "name": "addmoney",
+      "description": "💵 Ajouter de l'argent à un utilisateur (bot créateur uniquement)"
+    },
+    "language": {
+      "name": "language",
+      "description": "🌐 Changer la langue du bot"
+    },
+    "removemoney": {
+      "name": "removemoney",
+      "description": "💸 Retirer de l'argent du solde d'un utilisateur (bot créateur uniquement)"
+    },
+    "daily": {
+      "name": "daily",
+      "description": "🎁 Collectez votre récompense quotidienne de 10.000 pièces"
+    },
+    "sell": {
+      "name": "sell",
+      "description": "💰 Vendez vos ballons et mobiles pour des pièces de monnaie"
+    },
+    "crash": {
+      "name": "crash",
+      "description": "💥 Jouez à Crash avec un pari!"
+    },
+    "race": {
+      "name": "race",
+      "description": "🏇 Pariez sur un cheval pour gagner gros!"
+    },
+    "roulette": {
+      "name": "roulette",
+      "description": "🎡 Jouez à la roulette en devinant la couleur"
+    },
+    "rps": {
+      "name": "rps",
+      "description": "✂️ Jouez à Rock Paper Scissors avec un pari!"
+    },
+    "slot": {
+      "name": "slot",
+      "description": "🎰 Jouez à la machine à sous avec un pari!"
+    },
+    "buy": {
+      "name": "buy",
+      "description": "🛒 Achetez des articles dans le magasin"
+    },
+    "deleteaccount": {
+      "name": "deleteaccount",
+      "description": "❌ Supprimez définitivement votre compte et toutes les données associées"
+    },
+    "gift": {
+      "name": "gift",
+      "description": "🎁 Donner de l'argent à un autre utilisateur"
+    },
+    "help": {
+      "name": "help",
+      "description": "🆘 Afficher les commandes disponibles"
+    },
+    "inventory": {
+      "name": "inventory",
+      "description": "📦Voir votre inventaire ou l'inventaire d'un autre utilisateur"
+    },
+    "profile": {
+      "name": "profile",
+      "description": "👤 Vérifiez le profil d'un utilisateur, y compris son solde et ses statistiques"
+    },
+    "top": {
+      "name": "top",
+      "description": "🏆 Afficher les 10 meilleurs joueurs avec le plus d'argent ou le plus haut niveau"
+    },
+	"suggest": {
+      "name": "suggest",
+      "description": "💬Envoyez une suggestion au canal de support"
+    }
+  },
+  "categories": {
+    "users": "Utilisateurs",
+    "admin": "Admin",
+    "games": "Jeux",
+    "economy": "Économie",
+    "assist": "Assistance"
+  },
+  "help_welcome": {
+    "title": "✨ Bienvenue dans la section Aide! ✨",
+    "description": "🤖 Vous trouverez ici toutes les commandes disponibles.\n\n**Choisissez une catégorie ci-dessous à explorer!**"
+  }
+
+}
