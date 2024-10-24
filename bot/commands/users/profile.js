@@ -47,7 +47,15 @@ module.exports = {
     }
 
     // Calculate experience needed for the next level
-    const xpNeeded = player.level * 300; // Example: 100 XP needed for level 1, 200 for level 2, etc.
+    let highestLevelGained = player.level; // Track the highest level gained in this session
+    const xpNeeded = player.level * 200; // Example: 100 XP needed for level 1, 200 for level 2, etc.
+    while (player.experience >= xpNeeded) {
+          player.level += 1; // Level up
+          player.experience -= xpNeeded; // Reduce experience by the required amount
+          highestLevelGained = player.level; // Update highest level gained
+        }
+    await player.save();
+    let xpNeededNew = player.level * 200
     const progressBarLength = 10; // Length of the progress bar
     const filledLength = Math.floor(
       (player.experience / xpNeeded) * progressBarLength
@@ -63,7 +71,7 @@ module.exports = {
         { name: lang.level, value: `${player.level.toLocaleString()}`, inline: false },
         {
           name: lang.experience,
-          value: `${player.experience.toLocaleString()} / ${xpNeeded.toLocaleString()} XP`,
+          value: `${player.experience.toLocaleString()} / ${xpNeededNew.toLocaleString()} XP`,
           inline: false,
         },
         { name: lang.progressLevel, value: progressBar, inline: false },

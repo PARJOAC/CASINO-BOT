@@ -131,7 +131,7 @@ module.exports = {
     await playerData.save();
     
     // Slot machine symbols
-    const symbols = ['🍐','🍎','🍓','🥇','💰','💣','⚜️','🎈','🍒', '🍋', '🍊', '🍉', '🔔', '⭐', '💎']; // Extend this array for more symbols
+    const symbols = ['🍐','🍎','🍓','🥇','💣', '🎈','🍒', '🍋', '🍊', '🍉', '🔔', '⭐', '💎']; // Extend this array for more symbols
 
     // Spin the slot machine
     const spinResults = [
@@ -159,11 +159,11 @@ module.exports = {
     let highestLevelGained = playerData.level; // Track the highest level gained in this session
 
     // Add experience for winning (reduced to half)
-    experienceGained = Math.floor(winnings / 300); // Reduced: 0.5 XP for every 100 currency won
+    experienceGained = Math.floor(winnings / 200); // Reduced: 0.5 XP for every 100 currency won
     playerData.experience += experienceGained;
         
     // Level up logic
-    const xpNeeded = playerData.level * 300; // Example: 100 XP needed for level 1, 200 for level 2, etc.
+    const xpNeeded = playerData.level * 200; // Example: 100 XP needed for level 1, 200 for level 2, etc.
     while (playerData.experience >= xpNeeded) {
       playerData.level += 1; // Level up
       playerData.experience -= xpNeeded; // Reduce experience by the required amount
@@ -184,7 +184,7 @@ module.exports = {
     slotEmbed.addFields({ name: lang.resultSpin, value: resultMessage });
     
     // Reply with the embed
-    await interaction.reply({ embeds: [slotEmbed] });
+    await interaction.reply({ content: `<@${interaction.user.id}>`, embeds: [slotEmbed] });
   },
 };
 

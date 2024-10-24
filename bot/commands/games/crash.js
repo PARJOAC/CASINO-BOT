@@ -132,8 +132,6 @@ module.exports = {
       });
     }
 
-    // Update player's balance
-    playerData.balance -= betAmount;
     await playerData.save();
 
     let multiplier = 1.0;
@@ -186,9 +184,12 @@ module.exports = {
     const crashTimeout = setTimeout(async () => {
       crashed = true;
       clearInterval(updateMultiplier); // Stop updating multiplier
-
+      // Update player's balance
+    	playerData.balance -= betAmount;
+        await playerData.save();
       // Player loses their bet amount
       return interaction.editReply({
+        content: `<@${interaction.user.id}>`,
         embeds: [{
           title: lang.crashLoseTitle,
           description: lang.crashLostContent
@@ -218,11 +219,11 @@ module.exports = {
       let highestLevelGained = playerData.level; // Track the highest level gained in this session
 
         // Add experience for winning (reduced to half)
-        experienceGained = Math.floor(won / 300); // Reduced: 0.5 XP for every 100 currency won
+        experienceGained = Math.floor(won / 200); // Reduced: 0.5 XP for every 100 currency won
         playerData.experience += experienceGained;
         
         // Level up logic
-        const xpNeeded = playerData.level * 300; // Example: 100 XP needed for level 1, 200 for level 2, etc.
+        const xpNeeded = playerData.level * 200; // Example: 100 XP needed for level 1, 200 for level 2, etc.
         while (playerData.experience >= xpNeeded) {
           playerData.level += 1; // Level up
           playerData.experience -= xpNeeded; // Reduce experience by the required amount
@@ -238,6 +239,7 @@ module.exports = {
       
       // Send winning message
       await buttonInteraction.update({
+        content: `<@${interaction.user.id}>`, 
         embeds: [{
           title: lang.crashWinTitle,
           description: lang.crashWinContent

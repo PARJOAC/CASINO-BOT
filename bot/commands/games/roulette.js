@@ -193,7 +193,7 @@ module.exports = {
 
       if (isWin) {
         // Calculate winnings
-        let winnings = prediction === "green" ? betAmount * 3 : betAmount * 1;
+        let winnings = prediction === "green" ? betAmount * 36 : betAmount * 1;
         playerData.balance +=  Math.trunc(winnings); // Add winnings to balance
         messageEmbed.fields.push({
           name: lang.rouletteYouWon,
@@ -207,11 +207,11 @@ module.exports = {
         });
 
         // Add experience for winning (reduced to half)
-        experienceGained = Math.floor(winnings / 300); // Reduced: 0.5 XP for every 100 currency won
+        experienceGained = Math.floor(winnings / 200); // Reduced: 0.5 XP for every 100 currency won
         playerData.experience += experienceGained;
         
         // Level up logic
-        const xpNeeded = playerData.level * 300; // Example: 100 XP needed for level 1, 200 for level 2, etc.
+        const xpNeeded = playerData.level * 200; // Example: 100 XP needed for level 1, 200 for level 2, etc.
         while (playerData.experience >= xpNeeded) {
           playerData.level += 1; // Level up
           playerData.experience -= xpNeeded; // Reduce experience by the required amount
@@ -259,7 +259,7 @@ module.exports = {
       cooldowns[interaction.user.id] = Date.now() + ROULETTE_COOLDOWN; // Set cooldown for this user
 
       // Edit the original reply to show the result
-      await interaction.editReply({ embeds: [messageEmbed] });
+      await interaction.editReply({ content: `<@${interaction.user.id}>`, embeds: [messageEmbed] });
     }, 1000); // 1000 milliseconds = 1 second
   },
 };

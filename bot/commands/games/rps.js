@@ -179,6 +179,21 @@ module.exports = {
         (userChoice === 'paper' && botChoice === 'rock') ||
         (userChoice === 'scissors' && botChoice === 'paper')
       ) {
+        let experienceGained = 0; // Initialize experience gain variable
+      	let highestLevelGained = playerData.level; // Track the highest level gained in this session
+
+        // Add experience for winning (reduced to half)
+        experienceGained = Math.floor(Math.trunc(betAmount * 2) / 200); // Reduced: 0.5 XP for every 100 currency won
+        playerData.experience += experienceGained;
+        
+        // Level up logic
+        const xpNeeded = playerData.level * 200; // Example: 100 XP needed for level 1, 200 for level 2, etc.
+        while (playerData.experience >= xpNeeded) {
+          playerData.level += 1; // Level up
+          playerData.experience -= xpNeeded; // Reduce experience by the required amount
+          highestLevelGained = playerData.level; // Update highest level gained
+        }
+          
         result = lang.win;
         playerData.balance +=  Math.trunc(betAmount * 2); // Double the bet
       } else {
@@ -188,6 +203,7 @@ module.exports = {
       await playerData.save(); // Update player balance in the database
 
       await buttonInteraction.update({
+        content: `<@${interaction.user.id}>`,
         embeds: [
         {
           description: lang.finalContent

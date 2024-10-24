@@ -17,6 +17,7 @@
   "succesfulRemoveMoney": "{amount} 💰 has been successfully removed from {user}'s balance.",
   "cooldownActiveTitle": "⏳ Your are on Cooldown!",
   "cooldownTimeContent": "❌ You need to wait **{hours}h {minutes}m {seconds}s** before collecting your daily reward again.",
+  "cooldownTimeContentWork": "❌ You need to wait **{minutes}m {seconds}s** before collecting your work reward again.",
   "cooldownActiveSecondsContent": "❌ You need to wait {seconds} seconds before playing roulette again",
   "dailyRewardTitle": "✅ Daily Reward Collected!",
   "dailyRewardContent": "You have collected **{amount} 💰** coins!",
@@ -55,7 +56,7 @@
   "yourPrediction": "Your Prediction:",
   "raceResult": "Race Result:",
   "raceResultContent": "Racer {number} WON! 🎉",
-  "congratulations": "Congratulations! 💸",
+  "congratulations": "Congratulations!",
   "youWon": "You won {won} 🪙!",
   "youLost": "You lost {amount} 🪙",
   "xpGained": "XP Gained:",
@@ -138,6 +139,8 @@
   "suggestContent": "has sent the following suggestion:",
   "suggestSuccess": "✅ Your suggestion has been sent successfully!",
   "suggestErrorChannel": "❌ The support channel is not set up or found.",
+  "workRewardContent": "You have collected **{amount} 🪙** coins!",
+  "workRewardTitle": "✅ Work Reward Collected!",
 "commands": {
     "deleteuser": {
       "name": "deleteuser",
@@ -214,6 +217,10 @@
     "suggest": {
       "name": "suggest",
       "description": "💬 Send a suggestion to the support channel."
+    },
+    "work": {
+      "name": "work",
+      "description": "⛏️ Work and earn 1000 coins!"
     }
   },
   "categories": {

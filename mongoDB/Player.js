@@ -24,6 +24,7 @@ const PlayerSchema = new mongoose.Schema({
     sol: { type: Number, default: 0 },
     spanishFlag: { type: Number, default: 0 },
   },
+  lastWork: { type: Number, default: 0 },
   lastDaily: { type: Number, default: 0 },
   lastRoulette: { type: Number, default: 0 },
   lastCrash: { type: Number, default: 0 },

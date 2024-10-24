@@ -17,6 +17,7 @@
   "succesfulRemoveMoney": "{amount} 💰 è stato rimosso con successo dal saldo di {user}.",
   "cooldownActiveTitle": "⏳ Sei in raffreddamento!",
   "cooldownTimeContent": "❌ Devi attendere **{hours}h {minutes}m {seconds}s** prima di riscuotere nuovamente la tua ricompensa giornaliera.",
+  "cooldownTimeContentWork": "❌ Devi attendere **{hours}h {minutes}m {seconds}s** prima di ritirare nuovamente la ricompensa del lavoro.",
   "cooldownActiveSecondsContent": "❌ Devi attendere {seconds} secondi prima di giocare di nuovo alla roulette",
   "dailyRewardTitle": "✅ Ricompensa giornaliera raccolta!",
   "dailyRewardContent": "Hai raccolto **{amount} 💰** monete!",
@@ -55,7 +56,7 @@
   "yourPrediction": "La tua previsione:",
   "raceResult": "Risultato della gara:",
   "raceResultContent": "Il corridore {number} HA VINTO! 🎉",
-  "congratulations": "Congratulazioni! 💸",
+  "congratulations": "Congratulazioni!",
   "youWon": "Hai vinto {won} 🪙!",
   "youLost": "Hai perso {amount} 🪙",
   "xpGained": "XP guadagnati:",
@@ -138,6 +139,8 @@
   "suggestContent": "ha inviato il seguente suggerimento:",
   "suggestSuccess": "✅ Il tuo suggerimento è stato inviato con successo!",
   "suggestErrorChannel": "❌ Il canale di supporto non è impostato o trovato.",
+  "workRewardContent": "Hai raccolto **{amount} 🪙** pezzi!",
+  "workRewardTitle": "✅ Ristampa di lavoro raccolta!",
   "commands": {
     "deleteuser": {
       "name": "deleteuser",
@@ -214,6 +217,10 @@
 	"suggest": {
       "name": "suggest",
       "description": "💬 Invia un suggerimento al canale di supporto"
+    },
+    "work": {
+    "name": "work",
+    "description": "⛏️ Lavora e guadagna 1000 monete!"
     }
   },
   "categories": {
