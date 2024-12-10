@@ -1,0 +1,285 @@
+{
+  "flipCoin": "🪙 Подбрасываем монету...",
+  "lastBlackJack": "Последний раз играли в Блэкджек",
+  "lastCoinFlip": "Последний раз играли в Орёл или Решка",
+  "lastCrash": "Последний раз играли в Crash",
+  "lastMinesweeper": "Последний раз играли в Сапёр",
+  "lastRace": "Последний раз играли в Гонки",
+  "lastRoulette": "Последний раз играли в Рулетку",
+  "lastRps": "Последний раз играли в Камень-Ножницы-Бумага",
+  "lastRussianRoulette": "Последний раз играли в Русскую Рулетку",
+  "lastSlots": "Последний раз играли в Слоты",
+  "never": "Никогда не выполнено",
+  "dmDisabled": "Пользователь отключил DM и не получил сообщение.",
+  "waiting": "Делаем необыкновенные расчеты!",
+  "errorTitle": "❌ Ошибка",
+  "onlyCreatorBot": "Только создатель бота имеет разрешение на выполнение этой команды",
+  "minimumBet": "Сумма должна быть больше 100.",
+  "succesfulAddMoneyTitle": "💸 Деньги добавлены!",
+  "succesfulAddMoneyContent": "{amount} <:blackToken:1304186797064065065> было добавлено к балансу {user}.",
+  "userNotFoundOnDataBase": "Пользователь <@{user}> не найден в базе данных.",
+  "succesfulTitle": "✅ Успех",
+  "succesfulDeletedUserContent": "Пользователь <@{user}> успешно удален из базы данных.",
+  "sameLang": "Язык не может быть таким же, как уже установлен.",
+  "succesfulChangeLanguage": "Язык успешно изменен на {language}.",
+  "userCatchNotHaveAccount": "У этого пользователя еще нет аккаунта!",
+  "userNotHaveMoney": "У пользователя недостаточно средств для снятия этой суммы.",
+  "succesfulRemoveMoney": "{amount} <:blackToken:1304186797064065065> было удалено из баланса {user}.",
+  "noCommands": "❌ Нет доступных команд.",
+  "userNotHaveAccount": "У вас еще нет аккаунта! Пожалуйста, создайте его сначала.",
+  "userNotHaveAccountDaily": "У вас все еще нет аккаунта! Пожалуйста, сначала получите баланс.",
+  "errorCommand": "Произошла ошибка при выполнении этой команды!\n\nПожалуйста, сообщите об этом на https://discord.com/invite/p8CDnWHZJq",
+  "suggestErrorChannel": "Канал поддержки не настроен или не найден, пожалуйста, сообщите об этом.",
+  "suggestTitle": "📩 Новое предложение!",
+  "suggestContent": "отправил следующее предложение:",
+  "suggestSuccess": "✅ Ваше предложение было успешно отправлено!",
+  "negativeItem": "Элемент должен быть больше 0.",
+  "buyItemTitle": "🛒 Товары магазина 🛒",
+  "invalidItemSelect": "Неверно выбранный элемент.",
+  "errorNotEnoughMoneyToBuyContent": "У вас недостаточно денег, чтобы купить этот предмет.",
+  "purchaseSucContent": "Вы купили {amount} {item} за {totalCost} <:blackToken:1304186797064065065>.",
+  "cooldownActiveTitle": "⏳ У вас активен кулдаун!",
+  "cooldownTimeContentDaily": "Вам нужно подождать **{hours}ч {minutes}м {seconds}с**, чтобы снова получить свою ежедневную награду.",
+  "cooldownTimeContentWork": "Вам нужно подождать **{minutes}м {seconds}с**, чтобы снова получить награду за работу.",
+  "cooldownVoteTimeContent": "Вам нужно подождать **{hours}ч {minutes}м {seconds}с**, чтобы снова получить награду за голосование.",
+  "cooldownActiveSecondsContent": "Вам нужно подождать {seconds} секунд перед повторной игрой",
+  "dailyRewardTitle": "✅ Ежедневная награда собрана!",
+  "dailyRewardContent": "Вы собрали **{amount} <:blackToken:1304186797064065065>**.",
+  "nothingToSellContent": "У вас нет предметов для продажи.",
+  "errorBalloonSellContent": "У вас недостаточно воздушных шаров. У вас только {balloon}.",
+  "errorMobileSellContent": "У вас недостаточно мобильных телефонов. У вас только {mobile}.",
+  "succesfulSellContent": "Вы продали {quantity} {item} за {amount} <:blackToken:1304186797064065065>.",
+  "balloon": "🎈 Воздушные шары",
+  "mobile": "📱 Мобильные телефоны",
+  "workRewardTitle": "✅ Награда за работу собрана!",
+  "workRewardContent": "Вы собрали **{amount} <:blackToken:1304186797064065065>**.",
+  "amountErrorNegativeNumberContent": "❌ Сумма должна быть положительным числом.",
+  "amountErrorIntNumberContent": "❌ Сумма должна быть целым числом.",
+  "cashOutButton": "Вывести 🛑",
+  "crashTitleOnPlaying": "CRASH 💥",
+  "betField": "Вы поставили:",
+  "multiplierField": "Общий множитель:",
+  "winTitle": "🎉 Вы выиграли!",
+  "winField": "Вы выиграли:",
+  "youLose": "❌ Вы проиграли!",
+  "loseField": "Вы проиграли:",
+  "balanceField": "Ваш баланс:",
+  "cashoutFail": "Множитель должен быть больше 0.",
+  "cashOutsuccesful": "🎉 Успешное снятие!",
+  "xpGained": "Получено опыта:",
+  "retireButton": "Выйти",
+  "minesweeperGameTitle": "💣 Игра в сапера",
+  "minesweeperGameDescription": "Нажмите кнопку, чтобы испытать свою удачу! Избегайте бомб, чтобы увеличить свой множитель. Нажмите \"Выйти\", чтобы зафиксировать свои выигрыши.",
+  "minesweeperGameWinDescription": "Поздравляем! Вы достигли максимального количества выстрелов.",
+  "safeTitle": "✅ Вы в безопасности!",
+  "minesweeperGameSafeDescription": "Продолжайте или выведите, чтобы зафиксировать свои выигрыши!",
+  "timeException": "⏳ Время вышло!",
+  "timeExceptionDescription": "Ваше время истекло, и вы потеряли возможность играть.",
+  "horseStartingTitle": "🏇 Скачки - скоро начнется!",
+  "horseStartingContent": "Гонка вот-вот начнется! Пожалуйста, подождите...",
+  "yourRace": "Ваш жокей:",
+  "raceResult": "Результат гонки:",
+  "raceResultContent": "Жокей {number} ВЫИГРАЛ! 🎉",
+  "rouletteErrorInvalidNumber": "Пожалуйста, выберите номер от 1 до 36.",
+  "rouletteErrorRedNumber": "Этот номер недействителен для красного цвета.\nКрасные номера: **1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36**",
+  "rouletteErrorBlackNumber": "Этот номер недействителен для черного цвета.\nЧерные номера: **2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35**",
+  "rouletteErrorGreenNumber": "Этот номер недействителен для зеленого цвета.\nЗеленые номера: **0**",
+  "rouletteSpiningTitle": "🎡 Рулетка - крутится...",
+  "rouletteSpiningContent": "Мяч крутится... Пожалуйста, подождите! 🎡",
+  "rouletteBallLandedTitle": "Мяч упал на:",
+  "rouletteBallLandedContent": "{result} ({resultColor})",
+  "rouletteColorRed": "**🟥 КРАСНЫЙ**",
+  "rouletteColorBlack": "**⬛ ЧЕРНЫЙ**",
+  "rouletteColorGreen": "**🟩 ЗЕЛЕНЫЙ**",
+  "yourPrediction": "Ваш прогноз:",
+  "rockButton": "🪨 Камень",
+  "paperButton": "📄 Бумага",
+  "scissorsButton": "✂️ Ножницы",
+  "chooseMove": "⏳ Выберите свой ход!",
+  "tieTitle": "Это ничья! 🤝",
+  "userChoiceField": "Ваш выбор:",
+  "botChoiceField": "Выбор бота:",
+  "shootButton": "Стрелять",
+  "initRussianRouletteTitle": "🔫 Русская рулетка",
+  "initRussianRouletteDescription": "Нажмите **Стрелять**, чтобы рискнуть еще раз, или **Выйти**, чтобы забрать свои текущие выигрыши.",
+  "roundsSurvived": "Раунд",
+  "slotSpinTitle": "🎰 Вращение игрового автомата!",
+  "yourBetWithCoin": "Ваша ставка: {amount} <:blackToken:1304186797064065065>",
+  "slotSpinResultWin": "🎉 Вы выиграли! Вы получили: **{result} <:blackToken:1304186797064065065>**.",
+  "slotSpinResultLost": "😢 Вы проиграли! Удачи в следующий раз!",
+  "resultSpin": "Результат",
+  "someUser": "Вы не можете дать себе деньги!",
+  "giftSenderNotHaveMoneyContent": "У вас недостаточно денег для этого подарка.",
+  "giftSucContent": "Вы успешно подарили {amount} <:blackToken:1304186797064065065> пользователю {user}.",
+  "giftSucUserContent": "Пользователь {user} подарил вам {количество} <:blackToken:1304186797064065065>!",
+  "inventoryName1": "Испанский флаг",
+  "inventoryName2": "Мате",
+  "inventoryName3": "Паэлья",
+  "inventoryName4": "Вино",
+  "inventoryName5": "Шляпа",
+  "inventoryName6": "Футбольный мяч",
+  "inventoryName7": "Хамон",
+  "inventoryName8": "Гитара",
+  "inventoryName9": "Тореро",
+  "inventoryName10": "Фламенко",
+  "inventoryName11": "Snap",
+  "inventoryName12": "Кава",
+  "inventoryName13": "Кастаньеты",
+  "inventoryName14": "Саграда Фамилия",
+  "inventoryName15": "Солнце",
+  "inventoryTitle": "Инвентарь {user} 📦",
+  "inventoryEmpty": "❌ Этот инвентарь пуст.",
+  "profileTitle": "👤 Профиль {user}",
+  "votesText": "Множитель денег:",
+  "levelField": "Уровень",
+  "experienceField": "Опыт",
+  "progressLevel": "Прогресс к следующему уровню:",
+  "errorNotPlayerFound": "Игроков не найдено в базе данных",
+  "top10Content": "**#{topNumber}** - {user}: {category}",
+  "unknownTopPlayer": "❌ Неизвестный игрок",
+  "topLevelContent": "Уровень {level}",
+  "topTitle": "🏆 Топ 10 - {category}",
+  "moneyTitle": "Деньги <:blackToken:1304186797064065065>",
+  "levelTitle": "Уровень 🎮",
+  "requestedBy": "Запрошено пользователем {user}",
+  "alreadyExecutingCommand": "Вы уже выполняете игровую команду. Пожалуйста, дождитесь ее завершения перед выполнением новой.",
+  "initialVoteTitle": "🌟 Голосуйте, чтобы получать награды! 🌟",
+  "initialVoteDescription": "Нажмите [здесь]({url}), чтобы проголосовать за бота на top.gg! Голосование помогает поддерживать бота и позволяет ему достичь большего числа пользователей.",
+  "thanksForVoting": "🌟 Спасибо за голосование! 🌟",
+  "alreadyVotedDescription": "Ваш голос очень важен для нас и помогает нам расти и улучшаться каждый день. Мы искренне благодарим вас за то, что вы уделили время, чтобы поддержать нас. Ваше участие необходимо!\nПомните, **вы можете проголосовать снова через 12 часов**. Надеемся снова увидеть ваш голос! 💖",
+  "yourReward": "Ваша награда:",
+  "errorVoteStatus": "Произошла ошибка при проверке вашего статуса голосования. Пожалуйста, попробуйте позже.",
+  "receivedCoins": "Вы получили {money} <:blackToken:1304186797064065065>",
+  "receivedItem": "Вы получили {item} в качестве награды!",
+  "receivedMultiplier": "Вы получили постоянный множитель x0.1 в качестве награды! Теперь у вас: x{total}",
+  "receivedExperience": "Вы получили {total} XP!",
+  "errorEnoughMoneyContent": "У вас недостаточно денег для этой ставки.",
+  "errorMaxBetContent": "Максимальная ставка для уровня **{level}** составляет **{number} <:blackToken:1304186797064065065>**. Введите меньшую ставку и попробуйте снова.",
+  "wonBalloon": "Вы также выиграли 🎈 шар!",
+  "wonMobile": "Вы также выиграли 📱 мобильный!",
+  "blackJackButtonHit": "Взять",
+  "blackjackStand": "Остановиться",
+  "initBlackjackTitle": "🃏 Блэкджек",
+  "initBlackjackDescription": "Нажмите 'Взять', чтобы взять ещё карту, или 'Остановиться', чтобы оставить руку.",
+  "yourHand": "Ваши карты",
+  "dealerHand": "Карты дилера",
+  "blackjackLoseDescription": "Ваш счёт превысил 21, и вы проиграли!",
+  "commands": {
+    "deleteuser": {
+      "name": "deleteuser",
+      "description": "🗑️ Удалить пользователя из базы данных (только для создателя бота)."
+    },
+    "addmoney": {
+      "name": "addmoney",
+      "description": "💵 Добавить деньги пользователю (только для создателя бота)."
+    },
+    "language": {
+      "name": "language",
+      "description": "🌐 Изменить язык бота."
+    },
+    "removemoney": {
+      "name": "removemoney",
+      "description": "💸 Удалить деньги с баланса пользователя (только для создателя бота)."
+    },
+    "daily": {
+      "name": "daily",
+      "description": "🎁 Получите свою ежедневную награду в 10,000 монет."
+    },
+    "sell": {
+      "name": "sell",
+      "description": "<:blackToken:1304186797064065065> Продайте свои шары и мобильные телефоны, чтобы получить монеты."
+    },
+    "crash": {
+      "name": "crash",
+      "description": "💥 Играть в Crash и делать ставки, чтобы выиграть."
+    },
+    "race": {
+      "name": "race",
+      "description": "🏇 Делайте ставки на скачки и выигрывайте крупно."
+    },
+    "roulette": {
+      "name": "roulette",
+      "description": "🎡 Играть в рулетку, угадывая цвет."
+    },
+    "rps": {
+      "name": "rps",
+      "description": "✂️ Играть в Камень, Ножницы или Бумагу с ставкой."
+    },
+    "slots": {
+      "name": "slots",
+      "description": "🎰 Играть в игровой автомат со ставкой."
+    },
+    "buy": {
+      "name": "buy",
+      "description": "🛒 Покупайте предметы в магазине."
+    },
+    "deleteaccount": {
+      "name": "deleteaccount",
+      "description": "❌ Постоянно удалите свою учетную запись и все связанные данные."
+    },
+    "gift": {
+      "name": "gift",
+      "description": "🎁 Передать деньги другому пользователю."
+    },
+    "help": {
+      "name": "help",
+      "description": "🆘 Показать доступные команды."
+    },
+    "inventory": {
+      "name": "inventory",
+      "description": "📦 Просмотр вашего инвентаря или инвентаря другого пользователя."
+    },
+    "profile": {
+      "name": "profile",
+      "description": "👤 Проверить профиль пользователя, включая баланс и статистику."
+    },
+    "top": {
+      "name": "top",
+      "description": "🏆 Показать топ 10 игроков с самым большим количеством денег или самым высоким уровнем."
+    },
+    "suggest": {
+      "name": "suggest",
+      "description": "💬 Отправить предложение в канал поддержки."
+    },
+    "work": {
+      "name": "work",
+      "description": "⛏️ Работайте и зарабатывайте 1000 монет!"
+    },
+    "vote": {
+      "name": "vote",
+      "description": "🗳️ Голосуйте, чтобы получить награды!"
+    },
+    "russianroulette": {
+      "name": "russianroulette",
+      "description": "🔫 Играть в русскую рулетку, делая ставки!"
+    },
+    "blackjack": {
+      "name": "blackjack",
+      "description": "🃏 Играйте в Блэкджек, делая ставки!"
+    },
+    "coinflip": {
+      "name": "coinflip",
+      "description": "💲 Играйте в коинфлип, делая ставки и выигрывая деньги!"
+    },
+    "minesweeper": {
+      "name": "minesweeper",
+      "description": "💣 Постарайтесь избежать бомб, чтобы увеличить свой выигрыш!"
+    },
+	"maintance": {
+  	  "name": "maintance",
+  	  "description": "🔧 Изменить статус бота обслуживания (только для создателя бота)."
+	}
+  },
+  "categories": {
+    "users": "Пользователи",
+    "admin": "Админ",
+    "games": "Игры",
+    "economy": "Экономика",
+    "assist": "Поддержка"
+  },
+  "helpWelcome": {
+    "title": "✨ Исследуйте наши команды! ✨",
+    "description": "🤖 Здесь вы можете найти все доступные команды.\n\n** Выберите категорию ниже, чтобы исследовать!**\nЕсли вам нужна помощь, посетите [это руководство](https://casinobot.gitbook.io/casinobot-docs-en) или присоединитесь к [сервера поддержки](https://discord.com/invite/p8CDnWHZJq).\nПомните, что если вы проголосуете, вы можете получить награды с помощью команды /vote 😉"
+  },
+  "noPermission": "Привет! Мне нужно несколько дополнительных разрешений для корректной работы на этом канале. Пожалуйста, убедитесь, что у меня есть следующие разрешения:\n\n{permissions}\n\nСвяжитесь с администратором сервера, чтобы настроить эти разрешения в настройках ролей или разрешениях канала.\n\n---------------\n\nЕсли у вас возникли проблемы, присоединяйтесь к серверу поддержки https://discord.com/invite/p8CDnWHZJq и попросите о помощи 💖"
+}

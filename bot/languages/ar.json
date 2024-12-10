@@ -1,0 +1,285 @@
+{
+  "flipCoin": "🪙 جاري رمي العملة...",
+  "lastBlackJack": "آخر مرة لعبت فيها بلاك جاك",
+  "lastCoinFlip": "آخر مرة لعبت فيها قلب العملة",
+  "lastCrash": "آخر مرة لعبت فيها كراش",
+  "lastMinesweeper": "آخر مرة لعبت فيها كاسح الألغام",
+  "lastRace": "آخر مرة لعبت فيها السباق",
+  "lastRoulette": "آخر مرة لعبت فيها الروليت",
+  "lastRps": "آخر مرة لعبت فيها حجر-ورق-مقص",
+  "lastRussianRoulette": "آخر مرة لعبت فيها الروليت الروسي",
+  "lastSlots": "آخر مرة لعبت فيها السلوتس",
+  "never": "لم يتم تنفيذها أبدًا",
+  "dmDisabled": "المستخدم قام بتعطيل الرسائل المباشرة ولم يتلقى الرسالة.",
+  "waiting": "إجراء حسابات استثنائية!",
+  "errorTitle": "❌ خطأ",
+  "onlyCreatorBot": "فقط منشئ البوت لديه إذن لتنفيذ هذا الأمر",
+  "minimumBet": "يجب أن يكون المبلغ أكبر من 100.",
+  "succesfulAddMoneyTitle": "💸 تم إضافة المال!",
+  "succesfulAddMoneyContent": "{amount} <:blackToken:1304186797064065065> تم إضافتها إلى رصيد {user}.",
+  "userNotFoundOnDataBase": "لم يتم العثور على المستخدم <@{user}> في قاعدة البيانات.",
+  "succesfulTitle": "✅ نجاح",
+  "succesfulDeletedUserContent": "تم حذف المستخدم <@{user}> بنجاح من قاعدة البيانات.",
+  "sameLang": "لا يمكن أن تكون اللغة نفسها كما هي بالفعل.",
+  "succesfulChangeLanguage": "تم تغيير اللغة بنجاح إلى {language}.",
+  "userCatchNotHaveAccount": "هذا المستخدم ليس لديه حساب بعد!",
+  "userNotHaveMoney": "المستخدم ليس لديه رصيد كافٍ لإزالة هذا المبلغ.",
+  "succesfulRemoveMoney": "{amount} <:blackToken:1304186797064065065> تم إزالتها من رصيد {user}.",
+  "noCommands": "❌ لا توجد أوامر متاحة.",
+  "userNotHaveAccount": "ليس لديك حساب بعد! يرجى إنشاء واحد أولاً.",
+  "userNotHaveAccountDaily": "ليس لديك حساب بعد! يرجى الحصول على رصيد أولاً.",
+  "errorCommand": "حدث خطأ أثناء تنفيذ هذا الأمر!\n\nيرجى الإبلاغ عنه على https://discord.com/invite/p8CDnWHZJq",
+  "suggestErrorChannel": "قناة الدعم غير معدة أو لم يتم العثور عليها، يرجى الإبلاغ عنها.",
+  "suggestTitle": "📩 اقتراح جديد!",
+  "suggestContent": "أرسل الاقتراح التالي:",
+  "suggestSuccess": "✅ تم إرسال اقتراحك بنجاح!",
+  "negativeItem": "يجب أن يكون العنصر أكبر من 0.",
+  "buyItemTitle": "🛒 عناصر المتجر 🛒",
+  "invalidItemSelect": "❌ العنصر المحدد غير صالح.",
+  "errorNotEnoughMoneyToBuyContent": "ليس لديك ما يكفي من المال لشراء هذا العنصر.",
+  "purchaseSucContent": "اشتريت {amount} {item} مقابل {totalCost} <:blackToken:1304186797064065065>.",
+  "cooldownActiveTitle": "⏳ أنت في فترة تهدئة!",
+  "cooldownTimeContentDaily": "تحتاج إلى الانتظار **{hours}س {minutes}د {seconds}ث** قبل جمع مكافأتك اليومية مرة أخرى.",
+  "cooldownTimeContentWork": "تحتاج إلى الانتظار **{minutes}د {seconds}ث** قبل جمع مكافأتك من العمل مرة أخرى.",
+  "cooldownVoteTimeContent": "تحتاج إلى الانتظار **{hours}س {minutes}د {seconds}ث** قبل جمع مكافأتك من التصويت مرة أخرى.",
+  "cooldownActiveSecondsContent": "تحتاج إلى الانتظار {seconds} ثانية قبل اللعب مرة أخرى",
+  "dailyRewardTitle": "✅ تم جمع المكافأة اليومية!",
+  "dailyRewardContent": "لقد جمعت **{amount} <:blackToken:1304186797064065065>**!",
+  "nothingToSellContent": "ليس لديك أي عناصر لبيعها.",
+  "errorBalloonSellContent": "ليس لديك ما يكفي من البالونات. لديك فقط {balloon}.",
+  "errorMobileSellContent": "ليس لديك ما يكفي من الهواتف المحمولة. لديك فقط {mobile}.",
+  "succesfulSellContent": "قمت ببيع {quantity} {item} مقابل {amount} <:blackToken:1304186797064065065>.",
+  "balloon": "🎈 بالونات",
+  "mobile": "📱 هواتف",
+  "workRewardTitle": "✅ تم جمع مكافأة العمل!",
+  "workRewardContent": "لقد جمعت **{amount} <:blackToken:1304186797064065065>**!",
+  "amountErrorNegativeNumberContent": "يجب أن يكون المبلغ رقمًا إيجابيًا.",
+  "amountErrorIntNumberContent": "يجب أن يكون المبلغ رقمًا صحيحًا.",
+  "cashOutButton": "تسوية 🛑",
+  "crashTitleOnPlaying": "تحطم 💥",
+  "betField": "رهانك:",
+  "multiplierField": "مضاعف الإجمالي:",
+  "winTitle": "🎉 فزت!",
+  "winField": "ربحت:",
+  "youLose": "❌ خسرت!",
+  "loseField": "خسرت:",
+  "balanceField": "رصيدك:",
+  "cashoutFail": "يجب أن يكون المضاعف أكثر من 0.",
+  "cashOutsuccesful": "🎉 التسوية ناجحة!",
+  "xpGained": "تم اكتساب XP:",
+  "retireButton": "تقاعد",
+  "minesweeperGameTitle": "💣 لعبة كاسح الألغام",
+  "minesweeperGameDescription": "انقر على زر لاختبار حظك! تجنب الألغام لزيادة المضاعف. انقر على \"تقاعد\" لتأمين أرباحك.",
+  "minesweeperGameWinDescription": "تهانينا! لقد وصلت إلى الحد الأقصى لعدد الطلقات.",
+  "safeTitle": "✅ أنت في أمان!",
+  "minesweeperGameSafeDescription": "استمر أو قم بالتسوية لتأمين أرباحك!",
+  "timeException": "⏳ انتهى الوقت!",
+  "timeExceptionDescription": "انتهى الوقت وضاعت فرصتك في اللعب.",
+  "horseStartingTitle": "🏇 سباق الخيل - سيبدأ قريبًا!",
+  "horseStartingContent": "السباق على وشك البدء! الرجاء الانتظار لحظة...",
+  "yourRace": "المتسابق الخاص بك:",
+  "raceResult": "نتيجة السباق:",
+  "raceResultContent": "المتسابق {number} فاز! 🎉",
+  "rouletteErrorInvalidNumber": "الرجاء اختيار رقم بين 1 و 36.",
+  "rouletteErrorRedNumber": "هذا الرقم غير صالح للون الأحمر.\nالأرقام الحمراء: **1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36**",
+  "rouletteErrorBlackNumber": "هذا الرقم غير صالح للون الأسود.\nالأرقام السوداء: **2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35**",
+  "rouletteErrorGreenNumber": "هذا الرقم غير صالح للون الأسود.\nالأرقام الخضراء: **0**",
+  "rouletteSpiningTitle": "🎡 الروليت - يدور...",
+  "rouletteSpiningContent": "الكرة تدور... الرجاء الانتظار! 🎡",
+  "rouletteBallLandedTitle": "الكرة هبطت على:",
+  "rouletteBallLandedContent": "{result} ({resultColor})",
+  "rouletteColorRed": "**🟥 أحمر**",
+  "rouletteColorBlack": "**⬛ أسود**",
+  "rouletteColorGreen": "**🟩 أخضر**",
+  "yourPrediction": "توقعك:",
+  "rockButton": "🪨 صخرة",
+  "paperButton": "📄 ورقة",
+  "scissorsButton": "✂️ مقص",
+  "chooseMove": "⏳ اختر حركتك!",
+  "tieTitle": "إنها تعادل! 🤝",
+  "userChoiceField": "اختيارك:",
+  "botChoiceField": "اختيار البوت:",
+  "shootButton": "اطلاق النار",
+  "initRussianRouletteTitle": "🔫 الروليت الروسي",
+  "initRussianRouletteDescription": "انقر على **اطلاق النار** لخوض جولة أخرى أو **تسوية** لجمع أرباحك الحالية.",
+  "roundsSurvived": "الجولات الباقية",
+  "slotSpinTitle": "🎰 دوران ماكينة السلوتس!",
+  "yourBetWithCoin": "رهانك: {amount} <:blackToken:1304186797064065065>",
+  "slotSpinResultWin": "🎉 فزت! ربحت: **{result} <:blackToken:1304186797064065065>**.",
+  "slotSpinResultLost": "😢 خسرت! حظًا أوفر في المرة القادمة!",
+  "resultSpin": "النتيجة",
+  "someUser": "لا يمكنك أن تعطي نفسك المال!",
+  "giftSenderNotHaveMoneyContent": "ليس لديك ما يكفي من المال لإعطاء هذا المبلغ كهدية.",
+  "giftSucContent": "لقد قمت بنجاح بإهداء {amount} <:blackToken:1304186797064065065> إلى {user}.",
+  "giftSucUserContent": "المستخدم {user} قد أهدى لك {amount} <:blackToken:1304186797064065065>!",
+  "inventoryName1": "علم إسبانيا",
+  "inventoryName2": "ماتيه",
+  "inventoryName3": "باييلا",
+  "inventoryName4": "نبيذ",
+  "inventoryName5": "قبعة",
+  "inventoryName6": "كرة قدم",
+  "inventoryName7": "لحم خنزير",
+  "inventoryName8": "غيتار",
+  "inventoryName9": "مصارع الثيران",
+  "inventoryName10": "فلامنكو",
+  "inventoryName11": "طقطقة",
+  "inventoryName12": "كافا",
+  "inventoryName13": "كاستنيت",
+  "inventoryName14": "كنيسة ساغرادا فاميليا",
+  "inventoryName15": "شمس",
+  "inventoryTitle": "مخزون {user} 📦",
+  "inventoryEmpty": "❌ هذا المخزون فارغ.",
+  "profileTitle": "👤 الملف الشخصي لـ {user}",
+  "votesText": "مضاعف الأموال:",
+  "levelField": "المستوى",
+  "experienceField": "الخبرة",
+  "progressLevel": "التقدم إلى المستوى التالي:",
+  "errorNotPlayerFound": "لم يتم العثور على لاعبين في قاعدة البيانات",
+  "top10Content": "**#{topNumber}** - {user}: {category}",
+  "unknownTopPlayer": "❌ لاعب غير معروف",
+  "topLevelContent": "المستوى {level}",
+  "topTitle": "🏆 أفضل 10 - {category}",
+  "moneyTitle": "الأموال <:blackToken:1304186797064065065>",
+  "levelTitle": "المستوى 🎮",
+  "requestedBy": "طلب من {user}",
+  "alreadyExecutingCommand": "أنت تقوم بالفعل بتنفيذ أمر اللعبة. يرجى الانتظار حتى ينتهي قبل تنفيذ الأمر مرة أخرى.",
+  "initialVoteTitle": "🌟 صوت للحصول على المكافآت! 🌟",
+  "initialVoteDescription": "انقر [هنا]({url}) للتصويت للبوت على top.gg! يساعد التصويت في دعم البوت ويسمح له بالوصول إلى المزيد من المستخدمين.",
+  "thanksForVoting": "🌟 شكرًا للتصويت! 🌟",
+  "alreadyVotedDescription": "تصويتك يعني لنا الكثير ويساعدنا على النمو والتحسن كل يوم. نشكرك بصدق على أخذ الوقت لدعمنا. مشاركتك ضرورية!\nتذكر، **يمكنك التصويت مرة أخرى بعد 12 ساعة**. نأمل في الحصول على دعمك مرة أخرى! 💖",
+  "yourReward": "مكافأتك:",
+  "errorVoteStatus": "حدث خطأ أثناء التحقق من حالة تصويتك. يرجى المحاولة مرة أخرى لاحقًا.",
+  "receivedCoins": "لقد تلقيت {money} <:blackToken:1304186797064065065>",
+  "receivedItem": "لقد تلقيت {item} كمكافأة!",
+  "receivedMultiplier": "لقد حصلت على مضاعف دائم x0.1 كمكافأة! الآن لديك: x{total}",
+  "receivedExperience": "لقد حصلت على {total} خبرة!",
+  "errorEnoughMoneyContent": "ليس لديك ما يكفي من المال لوضع هذا الرهان.",
+  "errorMaxBetContent": "الحد الأقصى للرهان للمستوى **{level}** هو **{number} <:blackToken:1304186797064065065>**. أدخل رهانًا أقل وحاول مرة أخرى.",
+  "wonBalloon": "لقد ربحت أيضًا 🎈 بالون!",
+  "wonMobile": "لقد ربحت أيضًا 📱 هاتف!",
+  "blackJackButtonHit": "اضرب",
+  "blackjackStand": "قف",
+  "initBlackjackTitle": "🃏 بلاك جاك",
+  "initBlackjackDescription": "اضغط على اضرب لسحب بطاقة أخرى أو قف للبقاء.",
+  "yourHand": "يدك",
+  "dealerHand": "يد التاجر",
+  "blackjackLoseDescription": "لقد تجاوزت 21 وخسرت!",
+  "commands": {
+    "deleteuser": {
+      "name": "deleteuser",
+      "description": "🗑️ حذف المستخدم من قاعدة البيانات (فقط لمنشئ البوت)."
+    },
+    "addmoney": {
+      "name": "addmoney",
+      "description": "💵 إضافة المال إلى مستخدم (فقط لمنشئ البوت)."
+    },
+    "language": {
+      "name": "language",
+      "description": "🌐 تغيير لغة البوت."
+    },
+    "removemoney": {
+      "name": "removemoney",
+      "description": "💸 إزالة المال من رصيد مستخدم (فقط لمنشئ البوت)."
+    },
+    "daily": {
+      "name": "daily",
+      "description": "🎁 جمع مكافأتك اليومية من 10,000 عملة."
+    },
+    "sell": {
+      "name": "sell",
+      "description": "<:blackToken:1304186797064065065> بيع بالوناتك وهواتفك المحمولة للحصول على عملات."
+    },
+    "crash": {
+      "name": "crash",
+      "description": "💥 العب Crash وضع رهانًا للفوز."
+    },
+    "race": {
+      "name": "race",
+      "description": "🏇 ضع رهانًا على سباق الخيل وفز بجائزة كبيرة."
+    },
+    "roulette": {
+      "name": "roulette",
+      "description": "🎡 العب الروليت وخمن اللون."
+    },
+    "rps": {
+      "name": "rps",
+      "description": "✂️ العب حجر-ورق-مقص وضع رهانًا."
+    },
+    "slots": {
+      "name": "slots",
+      "description": "🎰 العب ماكينة السلوتس وضع رهانًا."
+    },
+    "buy": {
+      "name": "buy",
+      "description": "🛒 اشترِ العناصر من المتجر."
+    },
+    "deleteaccount": {
+      "name": "deleteaccount",
+      "description": "❌ احذف حسابك وجميع البيانات المرتبطة به بشكل دائم."
+    },
+    "gift": {
+      "name": "gift",
+      "description": "🎁 اعطِ المال لمستخدم آخر."
+    },
+    "help": {
+      "name": "help",
+      "description": "🆘 عرض الأوامر المتاحة."
+    },
+    "inventory": {
+      "name": "inventory",
+      "description": "📦 عرض مخزونك أو مخزون مستخدم آخر."
+    },
+    "profile": {
+      "name": "profile",
+      "description": "👤 تحقق من ملف تعريف المستخدم، بما في ذلك الرصيد والإحصائيات."
+    },
+    "top": {
+      "name": "top",
+      "description": "🏆 عرض أفضل 10 لاعبين بأعلى مبلغ من المال أو أعلى مستوى."
+    },
+    "suggest": {
+      "name": "suggest",
+      "description": "💬 أرسل اقتراحًا إلى قناة الدعم."
+    },
+    "work": {
+      "name": "work",
+      "description": "⛏️ اعمل واربح 1000 عملة!"
+    },
+    "vote": {
+      "name": "vote",
+      "description": "🗳️ صوت للحصول على المكافآت!"
+    },
+    "russianroulette": {
+      "name": "russianroulette",
+      "description": "🔫 العب الروليت الروسي مع الرهانات!"
+    },
+    "blackjack": {
+      "name": "blackjack",
+      "description": "🃏 العب بلاك جاك مع الرهانات!"
+    },
+    "coinflip": {
+      "name": "coinflip",
+      "description": "💲 العب قلب العملة واضع رهانًا للفوز بالمال!"
+    },
+    "minesweeper": {
+      "name": "minesweeper",
+      "description": "💣 حاول تجنب الألغام لزيادة أرباحك!"
+    },
+	"maintance": {
+  	  "name": "maintance",
+  	  "description": "🔧 تغيير حالة بوت الصيانة (فقط لمبدع البوت)."
+	}
+  },
+  "categories": {
+    "users": "المستخدمين",
+    "admin": "الإدارة",
+    "games": "الألعاب",
+    "economy": "الاقتصاد",
+    "assist": "الدعم"
+  },
+  "helpWelcome": {
+    "title": "✨ اكتشف أوامرنا! ✨",
+    "description": "🤖 هنا جميع الأوامر المتاحة.\n\n**اختر فئة أدناه لاستكشافها!**\nإذا كنت بحاجة إلى مساعدة، يرجى زيارة [هذا الدليل](https://casinobot.gitbook.io/casinobot-docs-en) أو الانضمام إلى [خادم الدعم](https://discord.com/invite/p8CDnWHZJq).\nPss تذكر، يمكنك الحصول على المكافآت عن طريق التصويت باستخدام الأمر /vote 😉"
+  },
+  "noPermission": "مرحبًا! أحتاج إلى بعض الأذونات الإضافية للعمل بشكل صحيح في هذه القناة. يرجى التأكد من أن لدي الأذونات التالية:\n\n{permissions}\n\nيرجى الاتصال بمسؤول الخادم لضبط هذه الأذونات في إعدادات الدور أو القناة.\n\n---------------\n\nإذا كنت تواجه مشكلات، انضم إلى خادم الدعم على https://discord.com/invite/p8CDnWHZJq واطلب المساعدة 💖"
+}

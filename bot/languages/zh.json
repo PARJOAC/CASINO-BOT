@@ -1,0 +1,285 @@
+{
+  "flipCoin": "🪙 正在抛硬币...",
+  "lastBlackJack": "上次玩21点的时间",
+  "lastCoinFlip": "上次玩抛硬币的时间",
+  "lastCrash": "上次玩崩溃的时间",
+  "lastMinesweeper": "上次玩扫雷的时间",
+  "lastRace": "上次玩赛跑的时间",
+  "lastRoulette": "上次玩轮盘赌的时间",
+  "lastRps": "上次玩石头-剪刀-布的时间",
+  "lastRussianRoulette": "上次玩俄罗斯轮盘赌的时间",
+  "lastSlots": "上次玩老虎机的时间",
+  "never": "从未执行过",
+  "dmDisabled": "用户已禁用DM，未收到消息。",
+  "waiting": "正在进行非凡的计算！",
+  "errorTitle": "❌ 错误",
+  "onlyCreatorBot": "只有Bot创建者有权限执行此命令",
+  "minimumBet": "金额必须大于100。",
+  "succesfulAddMoneyTitle": "💸 资金已添加！",
+  "succesfulAddMoneyContent": "{amount} <:blackToken:1304186797064065065> 已添加到 {user} 的余额。",
+  "userNotFoundOnDataBase": "数据库中未找到用户 <@{user}>。",
+  "succesfulTitle": "✅ 成功",
+  "succesfulDeletedUserContent": "用户 <@{user}> 已成功从数据库中删除。",
+  "sameLang": "语言不能与已设置的语言相同。",
+  "succesfulChangeLanguage": "语言已成功更改为 {language}。",
+  "userCatchNotHaveAccount": "该用户还没有账户！",
+  "userNotHaveMoney": "用户余额不足，无法移除该金额。",
+  "succesfulRemoveMoney": "已从 {user} 的余额中移除 {amount} <:blackToken:1304186797064065065>。",
+  "noCommands": "❌ 没有可用的命令。",
+  "userNotHaveAccount": "您还没有账户！请先创建一个账户。",
+  "userNotHaveAccountDaily": "您还没有账户！请先获取余额。",
+  "errorCommand": "执行此命令时出错！\n\n请在 https://discord.com/invite/p8CDnWHZJq 上报告。",
+  "suggestErrorChannel": "未设置或未找到支持频道，请报告。",
+  "suggestTitle": "📩 新建议！",
+  "suggestContent": "发送了以下建议：",
+  "suggestSuccess": "✅ 您的建议已成功发送！",
+  "negativeItem": "物品数量必须大于0。",
+  "buyItemTitle": "🛒 商店物品 🛒",
+  "invalidItemSelect": "❌ 选择的物品无效。",
+  "errorNotEnoughMoneyToBuyContent": "您没有足够的钱购买此物品。",
+  "purchaseSucContent": "您购买了 {amount} {item}，花费 {totalCost} <:blackToken:1304186797064065065>。",
+  "cooldownActiveTitle": "⏳ 冷却中！",
+  "cooldownTimeContentDaily": "您需要等待 **{hours}小时 {minutes}分钟 {seconds}秒** 才能再次领取每日奖励。",
+  "cooldownTimeContentWork": "您需要等待 **{minutes}分钟 {seconds}秒** 才能再次领取工作奖励。",
+  "cooldownVoteTimeContent": "您需要等待 **{hours}小时 {minutes}分钟 {seconds}秒** 才能再次领取投票奖励。",
+  "cooldownActiveSecondsContent": "您需要等待 {seconds} 秒才能再次进行游戏",
+  "dailyRewardTitle": "✅ 每日奖励已领取！",
+  "dailyRewardContent": "您已领取 **{amount} <:blackToken:1304186797064065065>**！",
+  "nothingToSellContent": "您没有任何物品可出售。",
+  "errorBalloonSellContent": "您没有足够的气球。您只有 {balloon} 个。",
+  "errorMobileSellContent": "您没有足够的手机。您只有 {mobile} 个。",
+  "succesfulSellContent": "您已出售 {quantity} {item}，获得 {amount} <:blackToken:1304186797064065065>。",
+  "balloon": "🎈 气球",
+  "mobile": "📱 手机",
+  "workRewardTitle": "✅ 工作奖励已领取！",
+  "workRewardContent": "您已领取 **{amount} <:blackToken:1304186797064065065>**！",
+  "amountErrorNegativeNumberContent": "金额必须是正数。",
+  "amountErrorIntNumberContent": "金额必须是整数。",
+  "cashOutButton": "提现 🛑",
+  "crashTitleOnPlaying": "崩溃 💥",
+  "betField": "您的赌注：",
+  "multiplierField": "总倍数：",
+  "winTitle": "🎉 您赢了！",
+  "winField": "您赢得了：",
+  "youLose": "❌ 您输了！",
+  "loseField": "您输了：",
+  "balanceField": "您的余额：",
+  "cashoutFail": "倍数必须大于0。",
+  "cashOutsuccesful": "🎉 提现成功！",
+  "xpGained": "获得经验值：",
+  "retireButton": "退休",
+  "minesweeperGameTitle": "💣 扫雷游戏",
+  "minesweeperGameDescription": "点击按钮测试您的运气！避开炸弹以增加倍数。点击“退休”以锁定您的奖金。",
+  "minesweeperGameWinDescription": "恭喜！您已达到了最大射击次数。",
+  "safeTitle": "✅ 您是安全的！",
+  "minesweeperGameSafeDescription": "继续或提现以确保您的奖金！",
+  "timeException": "⏳ 时间到了！",
+  "timeExceptionDescription": "您的时间已到，您失去了机会。",
+  "horseStartingTitle": "🏇 赛马 - 即将开始！",
+  "horseStartingContent": "比赛即将开始！请稍候...",
+  "yourRace": "您的赛马：",
+  "raceResult": "比赛结果：",
+  "raceResultContent": "赛马 {number} 赢了！🎉",
+  "rouletteErrorInvalidNumber": "请选择一个1到36之间的数字。",
+  "rouletteErrorRedNumber": "该数字对于红色无效。\n红色数字：**1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36**",
+  "rouletteErrorBlackNumber": "该数字对于黑色无效。\n黑色数字：**2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35**",
+  "rouletteErrorGreenNumber": "该数字对于绿色无效。\n绿色数字：**0**",
+  "rouletteSpiningTitle": "🎡 轮盘 - 正在旋转...",
+  "rouletteSpiningContent": "球正在旋转... 请稍候！🎡",
+  "rouletteBallLandedTitle": "球落在：",
+  "rouletteBallLandedContent": "{result} ({resultColor})",
+  "rouletteColorRed": "**🟥 红色**",
+  "rouletteColorBlack": "**⬛ 黑色**",
+  "rouletteColorGreen": "**🟩 绿色**",
+  "yourPrediction": "您的预测：",
+  "rockButton": "🪨 石头",
+  "paperButton": "📄 纸",
+  "scissorsButton": "✂️ 剪刀",
+  "chooseMove": "⏳ 选择您的动作！",
+  "tieTitle": "平局！🤝",
+  "userChoiceField": "您的选择：",
+  "botChoiceField": "机器人选择：",
+  "shootButton": "射击",
+  "initRussianRouletteTitle": "🔫 俄罗斯轮盘",
+  "initRussianRouletteDescription": "点击 **射击** 冒险一回合，或点击 **提现** 收取当前奖金。",
+  "roundsSurvived": "回合",
+  "slotSpinTitle": "🎰 老虎机旋转！",
+  "yourBetWithCoin": "您的赌注：{amount} <:blackToken:1304186797064065065>",
+  "slotSpinResultWin": "🎉 您赢了！您赢得了：**{result} <:blackToken:1304186797064065065>**。",
+  "slotSpinResultLost": "😢 您输了！下次好运！",
+  "resultSpin": "结果",
+  "someUser": "您不能给自己送钱！",
+  "giftSenderNotHaveMoneyContent": "您没有足够的钱赠送此金额。",
+  "giftSucContent": "您已成功赠送 {amount} <:blackToken:1304186797064065065> 给 {user}。",
+  "giftSucUserContent": "用户 {user} 已赠送您 {amount} <:blackToken:1304186797064065065>！",
+  "inventoryName1": "西班牙国旗",
+  "inventoryName2": "马黛茶",
+  "inventoryName3": "海鲜饭",
+  "inventoryName4": "葡萄酒",
+  "inventoryName5": "帽子",
+  "inventoryName6": "足球",
+  "inventoryName7": "火腿",
+  "inventoryName8": "吉他",
+  "inventoryName9": "斗牛士",
+  "inventoryName10": "弗拉门戈舞",
+  "inventoryName11": "响指",
+  "inventoryName12": "卡瓦酒",
+  "inventoryName13": "响板",
+  "inventoryName14": "圣家堂",
+  "inventoryName15": "太阳",
+  "inventoryTitle": "{user} 的库存 📦",
+  "inventoryEmpty": "❌ 此库存为空。",
+  "profileTitle": "👤 {user} 的个人资料",
+  "votesText": "资金倍增器：",
+  "levelField": "等级",
+  "experienceField": "经验值",
+  "progressLevel": "距离下一级的进度：",
+  "errorNotPlayerFound": "数据库中未找到玩家",
+  "top10Content": "**#{topNumber}** - {user}：{category}",
+  "unknownTopPlayer": "❌ 未知玩家",
+  "topLevelContent": "等级 {level}",
+  "topTitle": "🏆 前10名 - {category}",
+  "moneyTitle": "金钱 <:blackToken:1304186797064065065>",
+  "levelTitle": "等级 🎮",
+  "requestedBy": "请求者 {user}",
+  "alreadyExecutingCommand": "您已经在执行游戏命令。请等待它完成后再执行。",
+  "initialVoteTitle": "🌟 投票以获得奖励！ 🌟",
+  "initialVoteDescription": "点击[这里]({url})在top.gg上为机器人投票！投票有助于支持机器人并让其接触更多用户。",
+  "thanksForVoting": "🌟 谢谢您的投票！ 🌟",
+  "alreadyVotedDescription": "您的投票对我们非常重要，并帮助我们每天不断成长和改进。我们非常感谢您花时间支持我们。您的参与至关重要！\n记住，**您可以每12小时投票一次**。希望再次得到您的支持！💖",
+  "yourReward": "您的奖励：",
+  "errorVoteStatus": "检查您的投票状态时出错。请稍后重试。",
+  "receivedCoins": "您已收到 {money} <:blackToken:1304186797064065065> ",
+  "receivedItem": "您收到了一件 {item} 作为奖励！",
+  "receivedMultiplier": "您获得了一个永久的x0.1倍数作为奖励！现在您有：x{total}",
+  "receivedExperience": "您已获得 {total} 经验值！",
+  "errorEnoughMoneyContent": "您没有足够的钱来下注。",
+  "errorMaxBetContent": "等级 **{level}** 的最大下注金额为 **{number} <:blackToken:1304186797064065065>**。请输入更低的赌注并重试。",
+  "wonBalloon": "您还赢得了一个 🎈 气球！",
+  "wonMobile": "您还赢得了一部 📱 手机！",
+  "blackJackButtonHit": "要牌",
+  "blackjackStand": "停牌",
+  "initBlackjackTitle": "🃏 21点",
+  "initBlackjackDescription": "点击要牌以抽取另一张牌，或点击停牌。",
+  "yourHand": "您的手牌",
+  "dealerHand": "庄家的手牌",
+  "blackjackLoseDescription": "您超过了21点，您输了！",
+  "commands": {
+    "deleteuser": {
+      "name": "deleteuser",
+      "description": "🗑️ 从数据库中删除用户（仅限机器人创建者）。"
+    },
+    "addmoney": {
+      "name": "addmoney",
+      "description": "💵 向用户添加钱（仅限机器人创建者）。"
+    },
+    "language": {
+      "name": "language",
+      "description": "🌐 更改机器人的语言。"
+    },
+    "removemoney": {
+      "name": "removemoney",
+      "description": "💸 从用户余额中移除钱（仅限机器人创建者）。"
+    },
+    "daily": {
+      "name": "daily",
+      "description": "🎁 收集您的每日奖励10,000硬币。"
+    },
+    "sell": {
+      "name": "sell",
+      "description": "<:blackToken:1304186797064065065> 出售您的气球和手机以获取硬币。"
+    },
+    "crash": {
+      "name": "crash",
+      "description": "💥 玩Crash并下注赢取奖励。"
+    },
+    "race": {
+      "name": "race",
+      "description": "🏇 下注赛马并赢取大奖。"
+    },
+    "roulette": {
+      "name": "roulette",
+      "description": "🎡 玩轮盘赌并猜测颜色。"
+    },
+    "rps": {
+      "name": "rps",
+      "description": "✂️ 玩石头剪刀布并下注。"
+    },
+    "slots": {
+      "name": "slots",
+      "description": "🎰 玩老虎机并下注。"
+    },
+    "buy": {
+      "name": "buy",
+      "description": "🛒 在商店购买物品。"
+    },
+    "deleteaccount": {
+      "name": "deleteaccount",
+      "description": "❌ 永久删除您的账户及所有相关数据。"
+    },
+    "gift": {
+      "name": "gift",
+      "description": "🎁 给其他用户送钱。"
+    },
+    "help": {
+      "name": "help",
+      "description": "🆘 显示可用命令。"
+    },
+    "inventory": {
+      "name": "inventory",
+      "description": "📦 查看您的库存或其他用户的库存。"
+    },
+    "profile": {
+      "name": "profile",
+      "description": "👤 检查用户的资料，包括余额和统计数据。"
+    },
+    "top": {
+      "name": "top",
+      "description": "🏆 显示拥有最高金额或最高等级的前10名玩家。"
+    },
+    "suggest": {
+      "name": "suggest",
+      "description": "💬 向支持频道发送建议。"
+    },
+    "work": {
+      "name": "work",
+      "description": "⛏️ 工作并赚取1000硬币！"
+    },
+    "vote": {
+      "name": "vote",
+      "description": "🗳️ 投票以获取奖励！"
+    },
+    "russianroulette": {
+      "name": "russianroulette",
+      "description": "🔫 玩俄罗斯轮盘并下注！"
+    },
+    "blackjack": {
+      "name": "blackjack",
+      "description": "🃏 玩21点并下注！"
+    },
+    "coinflip": {
+      "name": "coinflip",
+      "description": "💲 玩抛硬币并下注赢取奖金！"
+    },
+    "minesweeper": {
+      "name": "minesweeper",
+      "description": "💣 避开炸弹以增加您的赢利！"
+    },
+	"maintance": {
+  	  "name": "maintance",
+  	  "description": "🔧 更改维护机器人的状态（仅限机器人创建者）。"
+	}
+  },
+  "categories": {
+    "users": "用户",
+    "admin": "管理员",
+    "games": "游戏",
+    "economy": "经济",
+    "assist": "支持"
+  },
+  "helpWelcome": {
+    "title": "✨ 发现我们的命令！✨",
+    "description": "🤖 这里是所有可用命令。\n\n**选择下方的一个类别来探索！**\n如果需要帮助，请访问[此指南](https://casinobot.gitbook.io/casinobot-docs-en)或加入[支持服务器](https://discord.com/invite/p8CDnWHZJq)。\nPss 记得，您可以通过/vote命令投票获得奖励 😉"
+  },
+  "noPermission": "你好！我需要一些额外的权限才能在这个频道中正常工作。请确保我有以下权限：\n\n{permissions}\n\n请联系服务器管理员在角色设置或频道设置中调整这些权限。\n\n---------------\n\n如果有问题，请加入支持服务器 https://discord.com/invite/p8CDnWHZJq 请求帮助 💖"
+}
