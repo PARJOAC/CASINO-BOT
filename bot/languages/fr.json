@@ -1,0 +1,287 @@
+{
+  "userCurrentlyPlaying": "L'utilisateur joue actuellement, attendez que la partie se termine.",
+  "interactionInitError": "Une erreur s'est produite lors de l'exécution de la commande, veuillez réessayer dans quelques secondes.",
+  "flipCoin": "🪙 Lancer la pièce...",
+  "lastBlackJack": "Dernière fois joué au BlackJack",
+  "lastCoinFlip": "Dernière fois joué au Pile ou Face",
+  "lastCrash": "Dernière fois joué au Crash",
+  "lastMinesweeper": "Dernière fois joué au Démineur",
+  "lastRace": "Dernière fois joué à la Course",
+  "lastRoulette": "Dernière fois joué à la Roulette",
+  "lastRps": "Dernière fois joué à Pierre-Feuille-Ciseaux",
+  "lastRussianRoulette": "Dernière fois joué à la Roulette Russe",
+  "lastSlots": "Dernière fois joué aux Machines à Sous",
+  "never": "Jamais exécuté",
+  "dmDisabled": "L'utilisateur a désactivé DM et n'a pas reçu le message.",
+  "waiting": "Faire des calculs extraordinaires!",
+  "errorTitle": "❌ Erreur",
+  "onlyCreatorBot": "Seul le Créateur du Bot a la permission d'exécuter cette commande",
+  "minimumBet": "Le montant doit être supérieur à 100.",
+  "succesfulAddMoneyTitle": "💸 Argent Ajouté!",
+  "succesfulAddMoneyContent": "{amount} <:blackToken:1304186797064065065> a été ajouté au solde de {user}.",
+  "userNotFoundOnDataBase": "Utilisateur <@{user}> non trouvé dans la base de données.",
+  "succesfulTitle": "✅ Succès",
+  "succesfulDeletedUserContent": "L'utilisateur <@{user}> a été supprimé avec succès de la base de données.",
+  "sameLang": "La langue ne peut pas être la même que celle déjà établie.",
+  "succesfulChangeLanguage": "La langue a été changée avec succès en {language}.",
+  "userCatchNotHaveAccount": "Cet utilisateur n'a pas encore de compte!",
+  "userNotHaveMoney": "L'utilisateur n'a pas assez de solde pour retirer ce montant.",
+  "succesfulRemoveMoney": "{amount} <:blackToken:1304186797064065065> a été retiré du solde de {user}.",
+  "noCommands": "❌ Aucun commande disponible.",
+  "userNotHaveAccount": "Vous n'avez pas encore de compte! Veuillez en créer un d'abord.",
+  "userNotHaveAccountDaily": "Vous n'avez toujours pas de compte! Veuillez obtenir un solde d'abord.",
+  "errorCommand": "Une erreur s'est produite lors de l'exécution de cette commande!\n\nVeuillez le signaler sur https://discord.com/invite/p8CDnWHZJq",
+  "suggestErrorChannel": "Le canal de support n'est pas configuré ou introuvable, veuillez le signaler.",
+  "suggestTitle": "📩 Nouvelle Suggestion!",
+  "suggestContent": "a envoyé la suggestion suivante:",
+  "suggestSuccess": "✅ Votre suggestion a été envoyée avec succès!",
+  "negativeItem": "L'article doit être supérieur à 0.",
+  "buyItemTitle": "🛒 Articles de la Boutique 🛒",
+  "invalidItemSelect": "Article sélectionné invalide.",
+  "errorNotEnoughMoneyToBuyContent": "Vous n'avez pas assez d'argent pour acheter cet article.",
+  "purchaseSucContent": "Vous avez acheté {amount} {item} pour {totalCost} <:blackToken:1304186797064065065>.",
+  "cooldownActiveTitle": "⏳ Vous êtes en Cooldown!",
+  "cooldownTimeContentDaily": "Vous devez attendre **{hours}h {minutes}m {seconds}s** avant de récupérer votre récompense quotidienne à nouveau.",
+  "cooldownTimeContentWork": "Vous devez attendre **{minutes}m {seconds}s** avant de récupérer votre récompense de travail à nouveau.",
+  "cooldownVoteTimeContent": "Vous devez attendre **{hours}h {minutes}m {seconds}s** avant de récupérer votre récompense de vote à nouveau.",
+  "cooldownActiveSecondsContent": "Vous devez attendre {seconds} secondes avant de jouer à nouveau",
+  "dailyRewardTitle": "✅ Récompense Quotidienne Récupérée!",
+  "dailyRewardContent": "Vous avez récupéré **{amount} <:blackToken:1304186797064065065>**.",
+  "nothingToSellContent": "Vous n'avez aucun article à vendre.",
+  "errorBalloonSellContent": "Vous n'avez pas assez de ballons. Vous avez seulement {balloon}.",
+  "errorMobileSellContent": "Vous n'avez pas assez de mobiles. Vous avez seulement {mobile}.",
+  "succesfulSellContent": "Vous avez vendu {quantity} {item} pour {amount} <:blackToken:1304186797064065065>.",
+  "balloon": "🎈 Ballons",
+  "mobile": "📱 Mobiles",
+  "workRewardTitle": "✅ Récompense de Travail Récupérée!",
+  "workRewardContent": "Vous avez récupéré **{amount} <:blackToken:1304186797064065065>**.",
+  "amountErrorNegativeNumberContent": "Le montant doit être un nombre positif.",
+  "amountErrorIntNumberContent": "Le montant doit être un nombre entier.",
+  "cashOutButton": "Encaisser 🛑",
+  "crashTitleOnPlaying": "CRASH 💥",
+  "betField": "Vous avez parié:",
+  "multiplierField": "Multiplicateur total:",
+  "winTitle": "🎉 Vous avez gagné!",
+  "winField": "Vous avez gagné:",
+  "youLose": "❌ Vous avez perdu!",
+  "loseField": "Vous avez perdu:",
+  "balanceField": "Votre solde:",
+  "cashoutFail": "Le multiplicateur doit être supérieur à 0.",
+  "cashOutsuccesful": "🎉 Encaissement Réussi!",
+  "xpGained": "XP Gagné:",
+  "retireButton": "Se retirer",
+  "minesweeperGameTitle": "💣 Jeu de Démineur",
+  "minesweeperGameDescription": "Cliquez sur un bouton pour tester votre chance! Évitez les bombes pour augmenter votre multiplicateur. Cliquez sur \"Se retirer\" pour sécuriser vos gains.",
+  "minesweeperGameWinDescription": "Félicitations! Vous avez atteint le nombre maximum de coups tirés.",
+  "safeTitle": "✅ Vous êtes en sécurité!",
+  "minesweeperGameSafeDescription": "Continuez ou encaissez pour sécuriser vos gains!",
+  "timeException": "⏳ Temps écoulé!",
+  "timeExceptionDescription": "Votre temps est écoulé et vous avez perdu votre chance de jouer.",
+  "horseStartingTitle": "🏇 Course de Chevaux - Départ Imminent!",
+  "horseStartingContent": "La course est sur le point de commencer! Veuillez patienter un moment...",
+  "yourRace": "Votre Coureur:",
+  "raceResult": "Résultat de la Course:",
+  "raceResultContent": "Coureur {number} A GAGNÉ! 🎉",
+  "rouletteErrorInvalidNumber": "Veuillez choisir un nombre entre 1 et 36.",
+  "rouletteErrorRedNumber": "Ce numéro n'est pas valide pour la couleur rouge.\nNuméros rouges: **1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36**",
+  "rouletteErrorBlackNumber": "Ce numéro n'est pas valide pour la couleur noire.\nNuméros noirs: **2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35**",
+  "rouletteErrorGreenNumber": "Ce numéro n'est pas valide pour la couleur verte.\nNuméros verts: **0**",
+  "rouletteSpiningTitle": "🎡 Roulette - En train de tourner...",
+  "rouletteSpiningContent": "La balle tourne... Veuillez patienter! 🎡",
+  "rouletteBallLandedTitle": "La balle est tombée sur:",
+  "rouletteBallLandedContent": "{result} ({resultColor})",
+  "rouletteColorRed": "**🟥 ROUGE**",
+  "rouletteColorBlack": "**⬛ NOIR**",
+  "rouletteColorGreen": "**🟩 VERT**",
+  "yourPrediction": "Votre Prédiction:",
+  "rockButton": "🪨 Pierre",
+  "paperButton": "📄 Papier",
+  "scissorsButton": "✂️ Ciseaux",
+  "chooseMove": "⏳ Choisissez votre mouvement!",
+  "tieTitle": "C'est un match nul! 🤝",
+  "userChoiceField": "Votre choix:",
+  "botChoiceField": "Choix du Bot:",
+  "shootButton": "Tirer",
+  "initRussianRouletteTitle": "🔫 Roulette Russe",
+  "initRussianRouletteDescription": "Cliquez sur **Tirer** pour risquer un autre tour ou sur **Se retirer** pour encaisser vos gains actuels.",
+  "roundsSurvived": "Tour",
+  "slotSpinTitle": "🎰 Tour de Machine à Sous!",
+  "yourBetWithCoin": "Votre pari: {amount} <:blackToken:1304186797064065065>",
+  "slotSpinResultWin": "🎉 Vous avez gagné! Vous avez gagné: **{result} <:blackToken:1304186797064065065>**.",
+  "slotSpinResultLost": "😢 Vous avez perdu! Bonne chance pour la prochaine fois!",
+  "resultSpin": "Résultat",
+  "someUser": "Vous ne pouvez pas vous donner de l'argent!",
+  "giftSenderNotHaveMoneyContent": "Vous n'avez pas assez d'argent pour faire ce cadeau.",
+  "giftSucContent": "Vous avez offert avec succès {amount} <:blackToken:1304186797064065065> à {user}.",
+  "giftSucUserContent": "L'utilisateur {user} vous a offert {montant} <:blackToken:1304186797064065065>!",
+  "inventoryName1": "Drapeau Espagnol",
+  "inventoryName2": "Maté",
+  "inventoryName3": "Paella",
+  "inventoryName4": "Vin",
+  "inventoryName5": "Chapeau",
+  "inventoryName6": "Ballon de football",
+  "inventoryName7": "Jambon",
+  "inventoryName8": "Guitare",
+  "inventoryName9": "Toreros",
+  "inventoryName10": "Flamenco",
+  "inventoryName11": "Snap",
+  "inventoryName12": "Cava",
+  "inventoryName13": "Castagnettes",
+  "inventoryName14": "Sagrada Familia",
+  "inventoryName15": "Soleil",
+  "inventoryTitle": "Inventaire de {user} 📦",
+  "inventoryEmpty": "❌ Cet inventaire est vide.",
+  "profileTitle": "👤 Profil de {user}",
+  "votesText": "Multiplicateur d'argent:",
+  "levelField": "Niveau",
+  "experienceField": "Expérience",
+  "progressLevel": "Progrès vers le niveau suivant:",
+  "errorNotPlayerFound": "Aucun joueur trouvé dans la base de données",
+  "top10Content": "**#{topNumber}** - {user}: {category}",
+  "unknownTopPlayer": "❌ Joueur Inconnu",
+  "topLevelContent": "Niveau {level}",
+  "topTitle": "🏆 Top 10 - {category}",
+  "moneyTitle": "Argent <:blackToken:1304186797064065065>",
+  "levelTitle": "Niveau 🎮",
+  "requestedBy": "Demandé par {user}",
+  "alreadyExecutingCommand": "Vous êtes déjà en train d'exécuter une commande de jeu. Veuillez attendre qu'elle se termine avant d'en exécuter une autre.",
+  "initialVoteTitle": "🌟 Votez pour recevoir des récompenses! 🌟",
+  "initialVoteDescription": "Cliquez [ici]({url}) pour voter pour le bot sur top.gg! Voter aide à soutenir le bot et lui permet d'atteindre plus d'utilisateurs.",
+  "thanksForVoting": "🌟 Merci pour votre vote! 🌟",
+  "alreadyVotedDescription": "Votre vote signifie beaucoup pour nous et nous aide à grandir et à nous améliorer chaque jour. Nous vous remercions sincèrement de prendre le temps de nous soutenir. Votre participation est essentielle!\nRappelez-vous, **vous pouvez voter à nouveau dans 12 heures**. Nous espérons compter sur vous à nouveau! 💖",
+  "yourReward": "Votre Récompense:",
+  "errorVoteStatus": "Une erreur s'est produite lors de la vérification de votre statut de vote. Veuillez réessayer plus tard.",
+  "receivedCoins": "Vous avez reçu {money} <:blackToken:1304186797064065065>",
+  "receivedItem": "Vous avez reçu un {item} en récompense!",
+  "receivedMultiplier": "Vous avez gagné un multiplicateur permanent de x0.1 en récompense! Vous avez maintenant: x{total}",
+  "receivedExperience": "Vous avez reçu {total} XP!",
+  "errorEnoughMoneyContent": "Vous n'avez pas assez d'argent pour faire ce pari.",
+  "errorMaxBetContent": "La mise maximale pour le niveau **{level}** est de **{number} <:blackToken:1304186797064065065>**. Entrez une mise inférieure et réessayez.",
+  "wonBalloon": "Vous avez également gagné un 🎈 ballon!",
+  "wonMobile": "Vous avez également gagné un 📱 mobile!",
+  "blackJackButtonHit": "Tirer",
+  "blackjackStand": "Rester",
+  "initBlackjackTitle": "🃏 Blackjack",
+  "initBlackjackDescription": "Cliquez sur Tirer pour piocher une autre carte ou sur Rester pour garder votre main.",
+  "yourHand": "Votre main",
+  "dealerHand": "Main du croupier",
+  "blackjackLoseDescription": "Vous avez dépassé 21 et vous avez perdu!",
+  "commands": {
+    "deleteuser": {
+      "name": "deleteuser",
+      "description": "🗑️ Supprimer un utilisateur de la base de données (bot créateur uniquement)"
+    },
+    "addmoney": {
+      "name": "addmoney",
+      "description": "💵 Ajouter de l'argent à un utilisateur (bot créateur uniquement)"
+    },
+    "language": {
+      "name": "language",
+      "description": "🌐 Changer la langue du bot"
+    },
+    "removemoney": {
+      "name": "removemoney",
+      "description": "💸 Retirer de l'argent du solde d'un utilisateur (bot créateur uniquement)"
+    },
+    "daily": {
+      "name": "daily",
+      "description": "🎁 Collectez votre récompense quotidienne de 10.000 pièces"
+    },
+    "sell": {
+      "name": "sell",
+      "description": "<:blackToken:1304186797064065065> Vendez vos ballons et mobiles pour des pièces de monnaie"
+    },
+    "crash": {
+      "name": "crash",
+      "description": "💥 Jouez à Crash avec un pari!"
+    },
+    "race": {
+      "name": "race",
+      "description": "🏇 Pariez sur un cheval pour gagner gros!"
+    },
+    "roulette": {
+      "name": "roulette",
+      "description": "🎡 Jouez à la roulette en devinant la couleur"
+    },
+    "rps": {
+      "name": "rps",
+      "description": "✂️ Jouez à Rock Paper Scissors avec un pari!"
+    },
+    "slots": {
+      "name": "slots",
+      "description": "🎰 Jouez à la machine à sous avec un pari!"
+    },
+    "buy": {
+      "name": "buy",
+      "description": "🛒 Achetez des articles dans le magasin"
+    },
+    "deleteaccount": {
+      "name": "deleteaccount",
+      "description": "❌ Supprimez définitivement votre compte et toutes les données associées"
+    },
+    "gift": {
+      "name": "gift",
+      "description": "🎁 Donner de l'argent à un autre utilisateur"
+    },
+    "help": {
+      "name": "help",
+      "description": "🆘 Afficher les commandes disponibles"
+    },
+    "inventory": {
+      "name": "inventory",
+      "description": "📦Voir votre inventaire ou l'inventaire d'un autre utilisateur"
+    },
+    "profile": {
+      "name": "profile",
+      "description": "👤 Vérifiez le profil d'un utilisateur, y compris son solde et ses statistiques"
+    },
+    "top": {
+      "name": "top",
+      "description": "🏆 Afficher les 10 meilleurs joueurs avec le plus d'argent ou le plus haut niveau"
+    },
+    "suggest": {
+      "name": "suggest",
+      "description": "💬Envoyez une suggestion au canal de support"
+    },
+    "work": {
+      "name": "work",
+      "description": "⛏️ Travaillez et gagnez 1000 pièces!"
+    },
+    "vote": {
+      "name": "vote",
+      "description": "🗳️ Votez pour recevoir des récompenses!"
+    },
+    "russianroulette": {
+      "name": "russianroulette",
+      "description": "🔫 Jouez à la roulette russe!"
+    },
+    "blackjack": {
+      "name": "blackjack",
+      "description": "🃏 Jouez au Blackjack en pariant !"
+    },
+    "coinflip": {
+      "name": "coinflip",
+      "description": "💲 Jouez à pile ou face en pariant pour gagner de l'argent!"
+    },
+    "minesweeper": {
+      "name": "minesweeper",
+      "description": "💣 Essayez d'éviter les bombes pour augmenter vos gains!"
+    },
+	"maintance": {
+  	  "name": "maintance",
+  	  "description": "🔧 Modifier l'état du bot de maintenance (bot créateur uniquement)."
+	}
+  },
+  "categories": {
+    "users": "Utilisateurs",
+    "admin": "Admin",
+    "games": "Jeux",
+    "economy": "Économie",
+    "assist": "Assistance"
+  },
+  "helpWelcome": {
+    "title": "✨ Bienvenue dans la section Aide! ✨",
+    "description": "🤖 Vous trouverez ici toutes les commandes disponibles.\n\n**Choisissez une catégorie ci-dessous à explorer!**"
+  },
+  "noPermission": "Bonjour ! J'ai besoin de quelques autorisations supplémentaires pour fonctionner correctement dans ce canal. Veuillez vous assurer que j'ai les autorisations suivantes:\n\n{permissions}\n\nContactez un administrateur du serveur pour ajuster ces autorisations dans les paramètres de rôle ou les permissions du canal.\n\n---------------\n\nSi vous avez des problèmes, rejoignez le Serveur de Support https://discord.com/invite/p8CDnWHZJq et demandez de l'aide 💖"
+}
