@@ -46,7 +46,9 @@
   "cooldownVoteTimeContent": "Vous devez attendre **{hours}h {minutes}m {seconds}s** avant de récupérer votre récompense de vote à nouveau.",
   "cooldownActiveSecondsContent": "Vous devez attendre {seconds} secondes avant de jouer à nouveau",
   "dailyRewardTitle": "✅ Récompense Quotidienne Récupérée!",
-  "dailyRewardContent": "Vous avez récupéré **{amount} <:blackToken:1304186797064065065>**.",
+  "cooldownTimeContentWeekly": "Tu dois attendre {days} jours {hours} heures {minutes} minutes {seconds} secondes avant de pouvoir récupérer ta récompense hebdomadaire.",
+  "weeklyRewardTitle": "✅ Récompense hebdomadaire collectée!",
+  "economyRewardContent": "Vous avez récupéré **{amount} <:blackToken:1304186797064065065>**.",
   "nothingToSellContent": "Vous n'avez aucun article à vendre.",
   "errorBalloonSellContent": "Vous n'avez pas assez de ballons. Vous avez seulement {balloon}.",
   "errorMobileSellContent": "Vous n'avez pas assez de mobiles. Vous avez seulement {mobile}.",
@@ -54,7 +56,6 @@
   "balloon": "🎈 Ballons",
   "mobile": "📱 Mobiles",
   "workRewardTitle": "✅ Récompense de Travail Récupérée!",
-  "workRewardContent": "Vous avez récupéré **{amount} <:blackToken:1304186797064065065>**.",
   "amountErrorNegativeNumberContent": "Le montant doit être un nombre positif.",
   "amountErrorIntNumberContent": "Le montant doit être un nombre entier.",
   "cashOutButton": "Encaisser 🛑",
@@ -175,8 +176,8 @@
       "name": "addmoney",
       "description": "💵 Ajouter de l'argent à un utilisateur (bot créateur uniquement)"
     },
-    "language": {
-      "name": "language",
+    "setlang": {
+      "name": "setlang",
       "description": "🌐 Changer la langue du bot"
     },
     "removemoney": {
@@ -267,10 +268,14 @@
       "name": "minesweeper",
       "description": "💣 Essayez d'éviter les bombes pour augmenter vos gains!"
     },
-	"maintance": {
-  	  "name": "maintance",
-  	  "description": "🔧 Modifier l'état du bot de maintenance (bot créateur uniquement)."
-	}
+    "maintance": {
+      "name": "maintance",
+      "description": "🔧 Modifier l'état du bot de maintenance (bot créateur uniquement)."
+    },
+    "weekly": {
+      "name": "weekly",
+      "description": "💎 Collectez votre récompense hebdomadaire de 50 000 pièces."
+    }
   },
   "categories": {
     "users": "Utilisateurs",

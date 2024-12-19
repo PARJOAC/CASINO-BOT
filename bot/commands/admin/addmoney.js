@@ -21,9 +21,11 @@ module.exports = {
         .setRequired(true)
     ),
   category: "admin",
+  admin: true,
+  commandId: "1296240894214934528",
   async execute(interaction, client) {
     const lang = await getGuildLanguage(interaction.guild.id);
-      
+
     if (interaction.user.id !== "714376484139040809") {
       return interaction.editReply({
         embeds: [
@@ -42,7 +44,7 @@ module.exports = {
     const user = interaction.options.getUser("user");
     const amount = interaction.options.getInteger("amount");
 
-      const isPlaying = await getSetUser(interaction, lang, user.id);
+    const isPlaying = await getSetUser(lang, user.id);
 
     if (isPlaying) {
       return interaction.editReply({
@@ -58,7 +60,7 @@ module.exports = {
         ephemeral: true,
       });
     }
-      
+
     if (amount <= 0) {
       return interaction.editReply({
         embeds: [

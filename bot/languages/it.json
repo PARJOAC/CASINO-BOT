@@ -46,7 +46,9 @@
   "cooldownVoteTimeContent": "Devi aspettare **{hours}h {minutes}m {seconds}s** prima di raccogliere di nuovo la tua ricompensa di voto.",
   "cooldownActiveSecondsContent": "Devi aspettare {seconds} secondi prima di giocare di nuovo",
   "dailyRewardTitle": "✅ Ricompensa Giornaliera Raccolta!",
-  "dailyRewardContent": "Hai raccolto **{amount} <:blackToken:1304186797064065065>**.",
+  "cooldownTimeContentWeekly": "Devi aspettare {days}g {hours}o {minutes}m {seconds}s prima di ritirare nuovamente la tua ricompensa settimanale.",
+  "weeklyRewardTitle": "✅ Ricompensa settimanale raccolta!",
+  "economyRewardContent": "Hai raccolto **{amount} <:blackToken:1304186797064065065>**.",
   "nothingToSellContent": "Non hai articoli da vendere.",
   "errorBalloonSellContent": "Non hai abbastanza palloncini. Hai solo {balloon}.",
   "errorMobileSellContent": "Non hai abbastanza cellulari. Hai solo {mobile}.",
@@ -54,7 +56,6 @@
   "balloon": "🎈 Palloncini",
   "mobile": "📱 Cellulari",
   "workRewardTitle": "✅ Ricompensa di Lavoro Raccolta!",
-  "workRewardContent": "Hai raccolto **{amount} <:blackToken:1304186797064065065>**.",
   "amountErrorNegativeNumberContent": "L'importo deve essere un numero positivo.",
   "amountErrorIntNumberContent": "L'importo deve essere un numero intero.",
   "cashOutButton": "Preleva 🛑",
@@ -175,8 +176,8 @@
       "name": "addmoney",
       "description": "💵 Aggiungere denaro a un utente (solo bot creatore)"
     },
-    "language": {
-      "name": "language",
+    "setlang": {
+      "name": "setlang",
       "description": "🌐 Cambia la lingua del bot"
     },
     "removemoney": {
@@ -239,6 +240,10 @@
       "name": "top",
       "description": "🏆 Mostra i primi 10 giocatori con più soldi o con il livello più alto"
     },
+    "weekly": {
+      "name": "weekly",
+      "description": "💎 Raccogli la tua ricompensa settimanale di 50.000 monete."
+    },
     "suggest": {
       "name": "suggest",
       "description": "💬 Invia un suggerimento al canale di supporto"
@@ -267,10 +272,10 @@
       "name": "minesweeper",
       "description": "💣 Cerca di evitare le bombe per aumentare le tue vincite!"
     },
-	"maintance": {
-  	  "name": "maintance",
-  	  "description": "🔧 Cambia lo stato del bot di manutenzione (solo per il creatore del bot)."
-	}
+    "maintance": {
+      "name": "maintance",
+      "description": "🔧 Cambia lo stato del bot di manutenzione (solo per il creatore del bot)."
+    }
   },
   "categories": {
     "users": "Utenti",

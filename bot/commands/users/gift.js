@@ -21,35 +21,36 @@ module.exports = {
                 .setRequired(true)
         ),
     category: "users",
+    commandId: "1296240894306943038",
     async execute(interaction, client) {
         const lang = await getGuildLanguage(interaction.guild.id);
         const recipient = interaction.options.getUser("recipient");
         const amount = interaction.options.getInteger("amount");
-        
+
         const executing = await getSet(interaction, lang);
-    if (executing) {
-        return;
-    } else {
-        await addSet(interaction.user.id);
-    };
+        if (executing) {
+            return;
+        } else {
+            await addSet(interaction.user.id);
+        };
 
-        const isPlaying = await getSetUser(interaction, lang, recipient.id);
+        const isPlaying = await getSetUser(lang, recipient.id);
 
-    if (isPlaying) {
-        await delSet(interaction.user.id);
-      return interaction.editReply({
-        embeds: [
-          await interactionEmbed({
-            title: lang.errorTitle,
-            description: lang.userCurrentlyPlaying,
-            color: 0xfe4949,
-            footer: "CasinoBot",
-            client,
-          }),
-        ],
-        ephemeral: true,
-      });
-    }
+        if (isPlaying) {
+            await delSet(interaction.user.id);
+            return interaction.editReply({
+                embeds: [
+                    await interactionEmbed({
+                        title: lang.errorTitle,
+                        description: lang.userCurrentlyPlaying,
+                        color: 0xfe4949,
+                        footer: "CasinoBot",
+                        client,
+                    }),
+                ],
+                ephemeral: true,
+            });
+        }
         if (amount <= 0) {
             await delSet(interaction.user.id);
             return interaction.editReply({

@@ -6,12 +6,13 @@ module.exports = {
         .setName("updates")
         .setDescription("See the latest update of the bot (english only)"),
     category: "assist",
+    commandId: "1307993499874099242",
     async execute(interaction, client) {
-               
+
         return interaction.editReply({
             embeds: [
                 await interactionEmbed({
-                    title: "Version 1.9.8 released! 10/12/2024 (DD/MM/YYYY)",
+                    title: "Version 1.9.8 released! 16/12/2024 (DD/MM/YYYY)",
                     description: `Thank you for gambling with <@${client.user.id}>!\nThis version includes the following:\n`,
                     color: 0x3498db,
                     footer: "CasinoBot",
@@ -29,7 +30,7 @@ module.exports = {
                         },
                         {
                             name: "🆕 New Commands",
-                            value: "- The /work command lets you earn 1000 coins every 10 minutes.\n- You can now see the global and server tops separately with the /top command.\n- /rps game added to win money playing rock, paper, scissors.\n- The /suggest command allows sending suggestions to the support server.\n- The /language command lets you change the bot’s language.\n- New /vote command to vote for the bot on top.gg and earn rewards!\n- Play Russian Roulette with /russiannroulette to win by betting!\n- New /minesweeper and /coinflip games added.\n- /blackjack game added.\n- Listen to casino music in the support server voice channel <#1297711868227485842> while playing.\n- /profile now shows the last time you played.\n- New languages added: German, Italian, French, Polish, Russian, Portuguese, Spanish, Arabic, Chinese, English, Hindi.",
+                            value: "- The /work command lets you earn 1,000 coins every 10 minutes.\n- You can now see the global and server tops separately with the /top command.\n- /rps game added to win money playing rock, paper, scissors.\n- The /suggest command allows sending suggestions to the support server.\n- The /language command lets you change the bot’s language.\n- New /vote command to vote for the bot on top.gg and earn rewards!\n- Play Russian Roulette with /russiannroulette to win by betting!\n- New /minesweeper and /coinflip games added.\n- /blackjack game added.\n- Listen to casino music in the support server voice channel <#1297711868227485842> while playing.\n- /profile now shows the last time you played.\n- New languages added: German, Italian, French, Polish, Russian, Portuguese, Spanish, Arabic, Chinese, English, Hindi.\n- Added /weekly command which gives 50,000 coins.",
                             inline: false,
                         },
                         {

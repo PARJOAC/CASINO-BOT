@@ -46,7 +46,9 @@
   "cooldownVoteTimeContent": "Musisz poczekać **{hours}h {minutes}m {seconds}s** przed ponownym odebraniem swojej nagrody za głosowanie.",
   "cooldownActiveSecondsContent": "Musisz poczekać {seconds} sekund przed ponowną grą",
   "dailyRewardTitle": "✅ Odebana Nagroda Codzienna!",
-  "dailyRewardContent": "Odebrałeś **{amount} <:blackToken:1304186797064065065>**.",
+  "cooldownTimeContentWeekly": "Musisz poczekać {days}d {hours}g {minutes}m {seconds}s przed ponownym odebraniem swojej cotygodniowej nagrody.",
+  "weeklyRewardTitle": "✅ Nagroda tygodniowa zebrana!",
+  "economyRewardContent": "Odebrałeś **{amount} <:blackToken:1304186797064065065>**.",
   "nothingToSellContent": "Nie masz żadnych przedmiotów do sprzedania.",
   "errorBalloonSellContent": "Nie masz wystarczająco balonów. Masz tylko {balloon}.",
   "errorMobileSellContent": "Nie masz wystarczająco telefonów. Masz tylko {mobile}.",
@@ -54,7 +56,6 @@
   "balloon": "🎈 Balony",
   "mobile": "📱 Telefony",
   "workRewardTitle": "✅ Odebrana Nagroda za Pracę!",
-  "workRewardContent": "Odebrałeś **{amount} <:blackToken:1304186797064065065>**.",
   "amountErrorNegativeNumberContent": "Kwota musi być liczbą dodatnią.",
   "amountErrorIntNumberContent": "Kwota musi być liczbą całkowitą.",
   "cashOutButton": "Wypłata 🛑",
@@ -175,8 +176,8 @@
       "name": "addmoney",
       "description": "💵 Dodaj pieniądze użytkownikowi (tylko dla twórcy bota)"
     },
-    "language": {
-      "name": "language",
+    "setlang": {
+      "name": "setlang",
       "description": "🌐 Zmień język bota"
     },
     "removemoney": {
@@ -247,6 +248,10 @@
       "name": "work",
       "description": "⛏️ Pracuj i zarabiaj 1000 monet!"
     },
+    "weekly": {
+      "name": "weekly",
+      "description": "💎 Zbierz swoją tygodniową nagrodę 50 000 monet."
+    },
     "vote": {
       "name": "vote",
       "description": "🗳️ Głosuj, aby otrzymać nagrody!"
@@ -267,10 +272,10 @@
       "name": "minesweeper",
       "description": "💣 Staraj się unikać bomb, aby zwiększyć swoje wygrane!"
     },
-	"maintance": {
-  	  "name": "maintance",
-  	  "description": "🔧 Zmień status bota konserwacji (tylko dla twórcy bota)."
-	}
+    "maintance": {
+      "name": "maintance",
+      "description": "🔧 Zmień status bota konserwacji (tylko dla twórcy bota)."
+    }
   },
   "categories": {
     "users": "Użytkownicy",

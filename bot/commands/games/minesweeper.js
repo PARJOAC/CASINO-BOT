@@ -7,10 +7,11 @@ const {
 const { getGuildLanguage } = require("../../functions/getGuildLanguage");
 const { getDataUser } = require("../../functions/getDataUser");
 const { logEmbedLose, logEmbedWin } = require("../../functions/logEmbeds");
-const { maxBet } = require("../../functions/maxBet");
 const { winExperience } = require("../../functions/winExperience");
 const { interactionEmbed } = require("../../functions/interactionEmbed");
-const { addSet, delSet, getSet } = require("../../functions/getSet");
+const { delSet } = require("../../functions/getSet");
+const { initGame } = require("../../functions/initGame");
+const { wonItem } = require("../../functions/wonItem");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -23,50 +24,18 @@ module.exports = {
         .setRequired(true)
     ),
   category: "game",
+  commandId: "1303800118948003872",
   async execute(interaction, client) {
     let betAmount = interaction.options.getString("bet");
     const lang = await getGuildLanguage(interaction.guild.id);
     let playerData = await getDataUser(interaction.user.id);
 
-        const executing = await getSet(interaction, lang);
-    if (executing) {
-        return;
-    } else {
-        await addSet(interaction.user.id);
-    };
+    let initGames = await initGame(betAmount, interaction, client, lang, playerData);
 
-    if (betAmount.toLowerCase() === "a") {
-      betAmount = playerData.balance;
-      if (betAmount <= 0) {
-        await delSet(interaction.user.id);
-        return interaction.editReply({
-          content: `<@${interaction.user.id}>`,
-          embeds: [
-            await interactionEmbed({
-              title: lang.errorTitle,
-              description: lang.errorEnoughMoneyContent,
-              color: 0xff0000,
-              footer: "CasinoBot",
-              client,
-            }),
-          ],
-          ephemeral: true,
-        });
-      }
-    } else {
-      const result = await maxBet(
-        playerData,
-        Number(betAmount),
-        lang,
-        interaction,
-        client
-      );
-      if (result) {
-        await delSet(interaction.user.id);
-        return;
-      }
-    }
-      
+    if (initGames.state) return;
+
+    betAmount = initGames.betAmount;
+
     const fecha = new Date();
     playerData.lastMinesweeper = fecha;
     await playerData.save();
@@ -152,22 +121,24 @@ module.exports = {
 
     collector.on("collect", async (i) => {
       if (i.customId === "retire") {
-          await i.deferUpdate();
+        await i.deferUpdate();
         if (totalMultiplier == 1.0) {
-        return interaction.followUp({
-          content: `<@${interaction.user.id}>`,
-          embeds: [
-            await interactionEmbed({
-              title: lang.cashoutFail,
-              color: 0xff0000,
-              footer: "CasinoBot",
-              client,
-            }),
-          ],
-          ephemeral: true,
-        });
-      }
+          return interaction.followUp({
+            content: `<@${interaction.user.id}>`,
+            embeds: [
+              await interactionEmbed({
+                title: lang.cashoutFail,
+                color: 0xff0000,
+                footer: "CasinoBot",
+                client,
+              }),
+            ],
+            ephemeral: true,
+          });
+        }
         gameOver = true;
+
+        collector.stop();
 
         winnings = Math.trunc(betAmount * totalMultiplier * (playerData.votes || 1));
         if (totalMultiplier == 1) winnings = 0;
@@ -177,15 +148,15 @@ module.exports = {
 
         const xpGained = await winExperience(playerData, winnings);
 
-        await logEmbedWin(
+        logEmbedWin(
           "MineSweeper",
           betAmount,
           playerData.balance,
           winnings,
-          interaction
+          i
         );
 
-        return i.editReply({
+        await i.editReply({
           content: `<@${interaction.user.id}>`,
           embeds: [
             await interactionEmbed({
@@ -204,7 +175,7 @@ module.exports = {
                 },
                 {
                   name: lang.multiplierField,
-                  value: `x${totalMultiplier} + x${playerData.votes || 1}`,
+                  value: `x${totalMultiplier.toFixed(2)} + x${playerData.votes || 1}`,
                 },
                 {
                   name: lang.balanceField,
@@ -220,22 +191,26 @@ module.exports = {
           ephemeral: false,
           components: [],
         });
+        await wonItem(playerData, i, lang, client);
+        return;
       } else {
         await i.deferUpdate();
         const index = parseInt(i.customId);
 
         if (buttons[index] === "bomb") {
 
+          collector.stop();
+
           gameOver = true;
 
           playerData.balance -= betAmount;
           await playerData.save();
 
-          await logEmbedLose(
+          logEmbedLose(
             "MineSweeper",
             betAmount,
             playerData.balance,
-            interaction
+            i
           );
 
           return i.editReply({
@@ -257,7 +232,7 @@ module.exports = {
                   },
                   {
                     name: lang.multiplierField,
-                    value: `x${totalMultiplier} + x${playerData.votes || 1}`,
+                    value: `x${totalMultiplier.toFixed(2)} + x${playerData.votes || 1}`,
                   },
                   {
                     name: lang.balanceField,
@@ -275,6 +250,8 @@ module.exports = {
           if (remainingSafeCount == 0) {
             gameOver = true;
 
+            collector.stop();
+
             winnings = Math.trunc(betAmount * totalMultiplier * (playerData.votes || 1));
             playerData.balance += winnings;
 
@@ -282,15 +259,15 @@ module.exports = {
 
             const xpGained = await winExperience(playerData, winnings);
 
-            await logEmbedWin(
+            logEmbedWin(
               "MineSweeper",
               betAmount,
               playerData.balance,
               winnings,
-              interaction
+              i
             );
 
-            return i.editReply({
+            await i.editReply({
               content: `<@${interaction.user.id}>`,
               embeds: [
                 await interactionEmbed({
@@ -310,7 +287,7 @@ module.exports = {
                     },
                     {
                       name: lang.multiplierField,
-                      value: `x${totalMultiplier} + x${playerData.votes || 1}`,
+                      value: `x${totalMultiplier.toFixed(2)} + x${playerData.votes || 1}`,
                     },
                     {
                       name: lang.balanceField,
@@ -326,6 +303,8 @@ module.exports = {
               ephemeral: false,
               components: [],
             });
+            await wonItem(playerData, i, lang, client);
+            return;
           } else {
             clickedIndices.push(index);
             const rows = createButtons(clickedIndices);
@@ -351,7 +330,7 @@ module.exports = {
                     },
                     {
                       name: lang.multiplierField,
-                      value: `x${totalMultiplier} + x${playerData.votes || 1}`,
+                      value: `x${totalMultiplier.toFixed(2)} + x${playerData.votes || 1}`,
                     },
                   ],
                 }),
@@ -366,19 +345,21 @@ module.exports = {
 
     collector.on("end", async (reason) => {
       await delSet(interaction.user.id);
-      return interaction.editReply({
-        content: `<@${interaction.user.id}>`,
-        embeds: [
-          await interactionEmbed({
-            title: lang.timeException,
-            description: lang.timeExceptionDescription,
-            color: 0xff0000,
-            footer: "CasinoBot",
-            client,
-          }),
-        ],
-        components: [],
-      });
+      if (reason === "time") {
+        return interaction.editReply({
+          content: `<@${interaction.user.id}>`,
+          embeds: [
+            await interactionEmbed({
+              title: lang.timeException,
+              description: lang.timeExceptionDescription,
+              color: 0xff0000,
+              footer: "CasinoBot",
+              client,
+            }),
+          ],
+          components: [],
+        });
+      }
     });
   },
 };

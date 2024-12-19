@@ -28,11 +28,12 @@ module.exports = {
                 )
         ),
     category: "users",
+    commandId: "1296240894306943042",
     async execute(interaction, client) {
         const lang = await getGuildLanguage(interaction.guild.id);
         const category = interaction.options.getString("category");
         const scope = interaction.options.getString("scope");
-       
+
         let topPlayers;
 
         await interaction.editReply({
@@ -66,13 +67,13 @@ module.exports = {
             if (!topPlayers || topPlayers.length === 0) {
                 return interaction.editReply({
                     embeds: [
-                await interactionEmbed({
-                    description: lang.errorNotPlayerFound,
-                    color: 0xff0000,
-                    footer: "CasinoBot",
-                    client
-                })
-            ],
+                        await interactionEmbed({
+                            description: lang.errorNotPlayerFound,
+                            color: 0xff0000,
+                            footer: "CasinoBot",
+                            client
+                        })
+                    ],
                 });
             }
 

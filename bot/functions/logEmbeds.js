@@ -1,96 +1,104 @@
 const { EmbedBuilder } = require("discord.js");
 const { delSet, addSet } = require("./getSet");
 
-async function logEmbedWin(
-    nameGame,
-    betAmount,
-    totalBalance,
-    won,
-    interaction
-) {
-    await delSet(interaction.user.id);
-    const logChannelWin = interaction.client.guilds.cache
+async function initInfo(interaction, processChannel) {
+    const logChannel = interaction.client.guilds.cache
         .get(process.env.GUILD_ID)
-        .channels.cache.get(process.env.GAMES_LOG_CHANNEL_ID);
+        .channels.cache.get(process.env[processChannel]);
+
     const user = await interaction.client.users.fetch(interaction.user.id);
-    const guild = await interaction.client.guilds.cache.get(interaction.guild.id);
+    const guild = interaction.guild;
+    const channel = interaction.channel;
+
+    return { logChannel, user, guild, channel };
+}
+
+async function logEmbedWin(nameGame, betAmount, totalBalance, won, interaction) {
+    await delSet(interaction.user.id);
+    const info = await initInfo(interaction, "GAMES_LOG_CHANNEL_ID");
+
     const logEmbedWin = new EmbedBuilder()
-        .setColor("#00ff00")
-        .setTitle(`🎉 ${nameGame} Win 🎉`)
+        .setColor(0x00ff00)
+        .setTitle(`${nameGame} | Win 🎉`)
         .setDescription(
-            `User: ${user.username} (${user.id})\nGuild: ${guild.name} (${guild.id
-            })\nBet Amount: **${betAmount.toLocaleString()} <:blackToken:1304186797064065065>**\nWon: **${won.toLocaleString()} <:blackToken:1304186797064065065>**\nTotal Balance: **${totalBalance.toLocaleString()} <:blackToken:1304186797064065065>**`
+            `**🧑 User:** ${info.user.username} (**${info.user.id}**)\n**🏠 Server:** ${info.guild.name} (**${info.guild.id
+            }**)\n\n**💰 Bet Amount:** ${betAmount.toLocaleString()} <:blackToken:1304186797064065065>\n**🏅 Won:** ${won.toLocaleString()} <:blackToken:1304186797064065065>\n**🔖 Total Balance:** ${totalBalance.toLocaleString()} <:blackToken:1304186797064065065>`
         )
         .setTimestamp()
-        .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+        .setThumbnail(info.user.displayAvatarURL({ dynamic: true }))
         .setFooter({ text: "© 2024 - All rights reserved to the developer" });
 
-    return logChannelWin.send({ embeds: [logEmbedWin] });
+    return info.logChannel.send({ embeds: [logEmbedWin] });
 }
 
 async function logEmbedLose(nameGame, betAmount, totalBalance, interaction) {
     await delSet(interaction.user.id);
-    
-    const logChannelLose = interaction.client.guilds.cache
-        .get(process.env.GUILD_ID)
-        .channels.cache.get(process.env.GAMES_LOG_CHANNEL_ID);
-    const user = await interaction.client.users.fetch(interaction.user.id);
-    const guild = await interaction.client.guilds.cache.get(interaction.guild.id);
-    const logEmbedWin = new EmbedBuilder()
-        .setColor("#ff0000")
-        .setTitle(`🎉 ${nameGame} Lose 🎉`)
+    const info = await initInfo(interaction, "GAMES_LOG_CHANNEL_ID");
+
+    const logEmbedLose = new EmbedBuilder()
+        .setColor(0xff0000)
+        .setTitle(`${nameGame} | Lose 😢`)
         .setDescription(
-            `User: ${user.username} (${user.id})\nGuild: ${guild.name} (${guild.id})\nBet Amount: **${betAmount.toLocaleString()} <:blackToken:1304186797064065065>**\nLose: **${betAmount.toLocaleString()} <:blackToken:1304186797064065065>**\nTotal Balance: **${totalBalance.toLocaleString()} <:blackToken:1304186797064065065>**`
+            `**🧑 User:** ${info.user.username} (**${info.user.id}**)\n**🏠 Server:** ${info.guild.name} (**${info.guild.id}**)\n\n**💰 Bet Amount:** ${betAmount.toLocaleString()} <:blackToken:1304186797064065065>\n**❌ Lose:** ${betAmount.toLocaleString()} <:blackToken:1304186797064065065>\n**🔖 Total Balance:** ${totalBalance.toLocaleString()} <:blackToken:1304186797064065065>`
         )
         .setTimestamp()
-        .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+        .setThumbnail(info.user.displayAvatarURL({ dynamic: true }))
         .setFooter({ text: "© 2024 - All rights reserved to the developer" });
 
-    return logChannelLose.send({ embeds: [logEmbedWin] });
+    return info.logChannel.send({ embeds: [logEmbedLose] });
+}
+
+async function logEmbedTie(nameGame, betAmount, totalBalance, interaction) {
+    await delSet(interaction.user.id);
+    const info = await initInfo(interaction, "GAMES_LOG_CHANNEL_ID");
+
+    const logEmbedTie = new EmbedBuilder()
+        .setColor(0xf4d03f)
+        .setTitle(`${nameGame} | Tie 🤝`)
+        .setDescription(
+            `**🧑 User:** ${info.user.username} (**${info.user.id}**)\n**🏠 Server:** ${info.guild.name} (**${info.guild.id
+            }**)\n\n**💰 Bet Amount:** ${betAmount.toLocaleString()} <:blackToken:1304186797064065065>\n**🔖 Total Balance:** ${totalBalance.toLocaleString()} <:blackToken:1304186797064065065>`
+        )
+        .setTimestamp()
+        .setThumbnail(info.user.displayAvatarURL({ dynamic: true }))
+        .setFooter({ text: "© 2024 - All rights reserved to the developer" });
+
+    return info.logChannel.send({ embeds: [logEmbedTie] });
 }
 
 async function logEmbedVotes(rewardVote, interaction) {
-    const logChannelVotes = interaction.client.guilds.cache
-        .get(process.env.GUILD_ID)
-        .channels.cache.get(process.env.VOTES_LOG_CHANNEL_ID);
-    const user = await interaction.client.users.fetch(interaction.user.id);
-    const guild = await interaction.client.guilds.cache.get(interaction.guild.id);
+    const info = await initInfo(interaction, "VOTES_LOG_CHANNEL_ID");
+
     const logEmbedVotes = new EmbedBuilder()
-        .setColor("Blue")
-        .setTitle(`🎉 Votes 🎉`)
+        .setColor(0x3498db)
+        .setTitle(`New Vote 🎉`)
         .setDescription(
-            `User: ${user.username} (${user.id})\nGuild: ${guild.name} (${guild.id})\nReward: ${rewardVote}`
+            `**🧑 User:** ${info.user.username} (**${info.user.id}**)\n**🏠 Server:** ${info.guild.name} (**${info.guild.id}**)\n\n**🎁 Reward:** ${rewardVote}`
         )
         .setTimestamp()
-        .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+        .setThumbnail(info.user.displayAvatarURL({ dynamic: true }))
         .setFooter({ text: "© 2024 - All rights reserved to the developer" });
 
-    return logChannelVotes.send({ embeds: [logEmbedVotes] });
+    return info.logChannel.send({ embeds: [logEmbedVotes] });
 }
 
 async function logCommand(nameCommand, interaction, lang) {
     await addSet(interaction, lang);
-    const logCommandChannel = interaction.client.guilds.cache
-        .get(process.env.GUILD_ID)
-        .channels.cache.get(process.env.COMMANDS_LOG_CHANNEL_ID);
+    const info = await initInfo(interaction, "COMMANDS_LOG_CHANNEL_ID");
 
-    const user = await interaction.client.users.fetch(interaction.user.id);
-    const guild = await interaction.client.guilds.cache.get(interaction.guild.id);
-    const channel = await interaction.client.channels.fetch(interaction.channel.id);
     const options = interaction.options.data.map(option => `${option.name}: ${option.value}`).join(" ");
 
     const logCommand = new EmbedBuilder()
-        .setColor("#e0f97e")
-        .setTitle(`${nameCommand} | 🔎 Command Executed `)
+        .setColor(0x82e0aa)
+        .setTitle(`${nameCommand} | Command Executed 🔎`)
         .setDescription(
-            `**User:** ${user.username} (${user.id})\n**Guild:** ${guild.name} (${guild.id})\n**Channel:** ${channel.name} (${channel.id})\n\n**Executed Command:**\n\`\`\`/${nameCommand} ${options}\`\`\`\n`
+            `**🧑 User:** ${info.user.username} (**${info.user.id}**)\n**🏠 Server:** ${info.guild.name} (**${info.guild.id}**)\n**📢 Channel:** ${info.channel.name} (**${info.channel.id}**)\n\n**📝 Executed Command:**\n\`\`\`/${nameCommand} ${options}\`\`\`\n`
         )
         .setTimestamp()
-        .setThumbnail(user.displayAvatarURL({ dynamic: true }))
+        .setThumbnail(info.user.displayAvatarURL({ dynamic: true }))
         .setFooter({ text: "© 2024 - All rights reserved to the developer" });
 
-    return logCommandChannel.send({ embeds: [logCommand] });
+    return info.logChannel.send({ embeds: [logCommand] });
 }
 
-
-module.exports = { logEmbedWin, logEmbedLose, logEmbedVotes, logCommand };
+module.exports = { logEmbedWin, logEmbedLose, logEmbedTie, logEmbedVotes, logCommand };

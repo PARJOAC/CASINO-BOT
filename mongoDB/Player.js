@@ -27,6 +27,7 @@ const PlayerSchema = new mongoose.Schema({
   },
   lastWork: { type: Number, default: 0 },
   lastDaily: { type: Number, default: 0 },
+  lastWeekly: { type: Number, default: 0 },
   lastBlackJack: { type: Number, default: 0 },
   lastCoinFlip: { type: Number, default: 0 },
   lastCrash: { type: Number, default: 0 },

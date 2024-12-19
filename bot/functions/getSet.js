@@ -1,19 +1,19 @@
 const actualCommand = new Set();
 
-async function getSetUser(interaction, lang, userId) {
-    if (actualCommand.has(userId)) return true;
-    return false;
+async function getSetUser(lang, userId) {
+  if (actualCommand.has(userId)) return true;
+  return false;
 }
 
 async function getSet(interaction, lang) {
-    if (actualCommand.has(interaction.user.id)) {
-    await interaction.editReply({
+  if (actualCommand.has(interaction.user.id)) {
+    await interaction.followUp({
       content: lang.alreadyExecutingCommand,
-      ephemeral: true,
+      //ephemeral: true,
     });
     return true;
   }
-    return false;
+  return false;
 }
 
 async function addSet(userId) {

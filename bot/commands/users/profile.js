@@ -15,6 +15,7 @@ module.exports = {
         .setDescription("The user whose profile you want to check")
     ),
   category: "users",
+  commandId: "1296240894306943041",
   async execute(interaction, client) {
     const lang = await getGuildLanguage(interaction.guild.id);
     let userToCheck = interaction.options.getUser("user") || interaction.user;
@@ -22,7 +23,7 @@ module.exports = {
     let playerData = await getDataUser(userToCheck.id);
 
     let progressBar = await calculateProfile(playerData);
-      
+
     const profileEmbed = {
       title: lang.profileTitle.replace("{user}", userToCheck.username),
       fields: [

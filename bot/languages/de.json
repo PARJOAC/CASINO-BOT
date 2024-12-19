@@ -46,7 +46,9 @@
   "cooldownVoteTimeContent": "Sie müssen **{hours}h {minutes}m {seconds}s** warten, bevor Sie Ihre Abstimmungsbelohnung erneut sammeln können.",
   "cooldownActiveSecondsContent": "Sie müssen {seconds} Sekunden warten, bevor Sie erneut spielen können",
   "dailyRewardTitle": "✅ Tägliche Belohnung gesammelt!",
-  "dailyRewardContent": "Sie haben **{amount} <:blackToken:1304186797064065065>** gesammelt!",
+  "cooldownTimeContentWeekly": "Du musst {days}d {hours}h {minutes}m {seconds}s warten, bevor du deine wöchentliche Belohnung wieder abholen kannst.",
+  "weeklyRewardTitle": "✅ Wöchentliche Belohnung gesammelt!",
+  "economyRewardContent": "Sie haben **{amount} <:blackToken:1304186797064065065>** gesammelt!",
   "nothingToSellContent": "Sie haben keine Artikel zu verkaufen.",
   "errorBalloonSellContent": "Sie haben nicht genug Ballons. Sie haben nur {balloon}.",
   "errorMobileSellContent": "Sie haben nicht genug Handys. Sie haben nur {mobile}.",
@@ -54,7 +56,6 @@
   "balloon": "🎈 Ballons",
   "mobile": "📱 Handys",
   "workRewardTitle": "✅ Arbeitsbelohnung gesammelt!",
-  "workRewardContent": "Sie haben **{amount} <:blackToken:1304186797064065065>** gesammelt!",
   "amountErrorNegativeNumberContent": "Der Betrag muss eine positive Zahl sein.",
   "amountErrorIntNumberContent": "Der Betrag muss eine ganze Zahl sein.Der Betrag muss eine ganze Zahl sein.",
   "cashOutButton": "Kasse 🛑",
@@ -175,8 +176,8 @@
       "name": "addmoney",
       "description": "💵 Geld einem Benutzer hinzufügen (nur für den Ersteller des Bots)."
     },
-    "language": {
-      "name": "language",
+    "setlang": {
+      "name": "setlang",
       "description": "🌐 Ändern Sie die Sprache des Bots."
     },
     "removemoney": {
@@ -223,6 +224,10 @@
       "name": "gift",
       "description": "🎁 Geben Sie einem anderen Benutzer Geld."
     },
+    "weekly": {
+      "name": "weekly",
+      "description": "💎 Sammle deine wöchentliche Belohnung von 50.000 Münzen."
+    },
     "help": {
       "name": "help",
       "description": "🆘 Zeigen Sie verfügbare Befehle an."
@@ -267,10 +272,10 @@
       "name": "minesweeper",
       "description": "💣 Versuche, die Bomben zu vermeiden, um deinen Gewinn zu steigern!"
     },
-	"maintance": {
- 	  "name": "maintance",
-  	  "description": "🔧 Ändern Sie den Status des Wartungsbots (nur für den Bot-Ersteller)."
-	}
+    "maintance": {
+      "name": "maintance",
+      "description": "🔧 Ändern Sie den Status des Wartungsbots (nur für den Bot-Ersteller)."
+    }
   },
   "categories": {
     "users": "Benutzer",

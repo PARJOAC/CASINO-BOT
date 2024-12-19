@@ -14,6 +14,7 @@ module.exports = {
         .setName("help")
         .setDescription("Show available commands"),
     category: "assist",
+    commandId: "1296240894306943039",
     async execute(interaction, client) {
         const lang = await getGuildLanguage(interaction.guild.id);
 
@@ -37,12 +38,16 @@ module.exports = {
                     folder,
                     file
                 ));
+                if (command.admin) {
+                    continue;
+                }
                 const commandInfo = lang.commands[command.data.name];
                 commandCategories[folder].push({
                     name: commandInfo ? commandInfo.name : command.data.name,
                     description: commandInfo
                         ? commandInfo.description
                         : command.data.description,
+                    commandId: command.commandId
                 });
             }
         }
@@ -51,7 +56,7 @@ module.exports = {
             ([category, commands]) => {
                 const commandList =
                     commands
-                        .map((command) => `**/${command.name}**: ${command.description}`)
+                        .map((command) => `</${command.name}:${command.commandId}> -> ${command.description}`)
                         .join("\n\n") || lang.noCommands;
 
                 const categoryEmojiMap = {

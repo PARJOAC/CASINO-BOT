@@ -46,7 +46,9 @@
   "cooldownVoteTimeContent": "您需要等待 **{hours}小时 {minutes}分钟 {seconds}秒** 才能再次领取投票奖励。",
   "cooldownActiveSecondsContent": "您需要等待 {seconds} 秒才能再次进行游戏",
   "dailyRewardTitle": "✅ 每日奖励已领取！",
-  "dailyRewardContent": "您已领取 **{amount} <:blackToken:1304186797064065065>**！",
+  "cooldownTimeContentWeekly": "您需要等待 **{days}天 {hours}小时 {minutes}分钟 {seconds}秒** 才能再次领取您的每周奖励。",
+  "weeklyRewardTitle": "✅ 每周奖励已领取！",
+  "economyRewardContent": "您已领取 **{amount} <:blackToken:1304186797064065065>**！",
   "nothingToSellContent": "您没有任何物品可出售。",
   "errorBalloonSellContent": "您没有足够的气球。您只有 {balloon} 个。",
   "errorMobileSellContent": "您没有足够的手机。您只有 {mobile} 个。",
@@ -54,7 +56,6 @@
   "balloon": "🎈 气球",
   "mobile": "📱 手机",
   "workRewardTitle": "✅ 工作奖励已领取！",
-  "workRewardContent": "您已领取 **{amount} <:blackToken:1304186797064065065>**！",
   "amountErrorNegativeNumberContent": "金额必须是正数。",
   "amountErrorIntNumberContent": "金额必须是整数。",
   "cashOutButton": "提现 🛑",
@@ -175,8 +176,8 @@
       "name": "addmoney",
       "description": "💵 向用户添加钱（仅限机器人创建者）。"
     },
-    "language": {
-      "name": "language",
+    "setlang": {
+      "name": "setlang",
       "description": "🌐 更改机器人的语言。"
     },
     "removemoney": {
@@ -223,6 +224,10 @@
       "name": "gift",
       "description": "🎁 给其他用户送钱。"
     },
+    "weekly": {
+      "name": "weekly",
+      "description": "💎 领取您的每周奖励 50,000 个金币。"
+    },
     "help": {
       "name": "help",
       "description": "🆘 显示可用命令。"
@@ -267,10 +272,10 @@
       "name": "minesweeper",
       "description": "💣 避开炸弹以增加您的赢利！"
     },
-	"maintance": {
-  	  "name": "maintance",
-  	  "description": "🔧 更改维护机器人的状态（仅限机器人创建者）。"
-	}
+    "maintance": {
+      "name": "maintance",
+      "description": "🔧 更改维护机器人的状态（仅限机器人创建者）。"
+    }
   },
   "categories": {
     "users": "用户",

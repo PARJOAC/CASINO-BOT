@@ -9,24 +9,26 @@ module.exports = {
         .setDescription("Toggle the bot's maintenance mode (creator bot only)")
         .setDefaultMemberPermissions(PermissionFlagsBits.Administrator),
     category: "admin",
+    admin: true,
+    commandId: "1312918452163575839",
     async execute(interaction, client) {
         const lang = await getGuildLanguage(interaction.guild.id);
-        
+
         if (interaction.user.id !== "714376484139040809") {
-      		return interaction.editReply({
-        		embeds: [
-          		await interactionEmbed({
-            		title: lang.errorTitle,
-            		description: lang.onlyCreatorBot,
-            		color: 0xfe4949,
-            		footer: "CasinoBot",
-            		client,
-          		}),
-        		],
-        		ephemeral: true,
-      		});
-    	}
-        
+            return interaction.editReply({
+                embeds: [
+                    await interactionEmbed({
+                        title: lang.errorTitle,
+                        description: lang.onlyCreatorBot,
+                        color: 0xfe4949,
+                        footer: "CasinoBot",
+                        client,
+                    }),
+                ],
+                ephemeral: true,
+            });
+        }
+
         let status = await Status.findOne();
 
         if (!status) {
@@ -40,7 +42,7 @@ module.exports = {
         const now = Date.now();
         const previousStatus = status.statusBot;
         status.statusBot = !status.statusBot;
-        
+
         let timeBefore = status.maintanceStartTime;
 
         if (status.statusBot) {

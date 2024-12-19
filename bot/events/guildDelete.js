@@ -3,7 +3,7 @@ const { Events, EmbedBuilder } = require("discord.js");
 module.exports = {
   name: Events.GuildDelete,
   async execute(guild, client) {
-    const guildChannel = client.channels.cache.get(process.env.GUILD_DELETE);
+    const guildChannel = client.channels.cache.get(process.env.LOG_CHANNEL_GUILD_DELETE);
 
     if (guildChannel) {
       try {

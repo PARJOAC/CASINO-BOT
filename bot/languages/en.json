@@ -41,12 +41,14 @@
   "errorNotEnoughMoneyToBuyContent": "You do not have enough money to buy this item.",
   "purchaseSucContent": "You bought {amount} {item} for {totalCost} <:blackToken:1304186797064065065>.",
   "cooldownActiveTitle": "⏳ Your are on Cooldown!",
+  "cooldownTimeContentWeekly": "You need to wait **{days}d {hours}h {minutes}m {seconds}s** before collecting your weekly reward again.",
   "cooldownTimeContentDaily": "You need to wait **{hours}h {minutes}m {seconds}s** before collecting your daily reward again.",
   "cooldownTimeContentWork": "You need to wait **{minutes}m {seconds}s** before collecting your work reward again.",
   "cooldownVoteTimeContent": "You need to wait **{hours}h {minutes}m {seconds}s** before collecting your vote reward again.",
   "cooldownActiveSecondsContent": "You need to wait {seconds} seconds before playing again",
   "dailyRewardTitle": "✅ Daily Reward Collected!",
-  "dailyRewardContent": "You have collected **{amount} <:blackToken:1304186797064065065>**!",
+  "weeklyRewardTitle": "✅ Weekly Reward Collected!",
+  "economyRewardContent": "You have collected **{amount} <:blackToken:1304186797064065065>**!",
   "nothingToSellContent": "You do not have any items to sell.",
   "errorBalloonSellContent": "You do not have enough balloons. You only have {balloon}.",
   "errorMobileSellContent": "You do not have enough mobiles. You only have {mobile}.",
@@ -54,7 +56,6 @@
   "balloon": "🎈 Balloons",
   "mobile": "📱 Mobiles",
   "workRewardTitle": "✅ Work Reward Collected!",
-  "workRewardContent": "You have collected **{amount} <:blackToken:1304186797064065065>**!",
   "amountErrorNegativeNumberContent": "The amount must be a positive number.",
   "amountErrorIntNumberContent": "The amount must be a whole number.",
   "cashOutButton": "Cash Out 🛑",
@@ -175,8 +176,8 @@
       "name": "addmoney",
       "description": "💵 Add money to a user (only for the creator of the bot)."
     },
-    "language": {
-      "name": "language",
+    "setlang": {
+      "name": "setlang",
       "description": "🌐 Change the language of the bot."
     },
     "removemoney": {
@@ -186,6 +187,10 @@
     "daily": {
       "name": "daily",
       "description": "🎁 Collect your daily reward of 10,000 coins."
+    },
+    "weekly": {
+      "name": "weekly",
+      "description": "💎 Collect your weekly reward of 50,000 coins."
     },
     "sell": {
       "name": "sell",

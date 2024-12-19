@@ -46,7 +46,9 @@
   "cooldownVoteTimeContent": "Necesitas esperar **{hours}h {minutes}m {seconds}s** antes de recoger tu recompensa de voto de nuevo.",
   "cooldownActiveSecondsContent": "Necesitas esperar {seconds} segundos antes de jugar de nuevo",
   "dailyRewardTitle": "✅ ¡Recompensa Diaria Recogida!",
-  "dailyRewardContent": "Has recogido **{amount} <:blackToken:1304186797064065065>**.",
+  "economyRewardContent": "Has recogido **{amount} <:blackToken:1304186797064065065>**.",
+  "cooldownTimeContentWeekly": "Necesitas esperar **{days}d {hours}h {minutes}m {seconds}s** antes de recoger tu recompensa semanal de nuevo.",
+  "weeklyRewardTitle": "✅ ¡Recompensa Semanal Recogida!",
   "nothingToSellContent": "No tienes ningún artículo para vender.",
   "errorBalloonSellContent": "No tienes suficientes globos. Solo tienes {balloon}.",
   "errorMobileSellContent": "No tienes suficientes móviles. Solo tienes {mobile}.",
@@ -54,7 +56,6 @@
   "balloon": "🎈 Globos",
   "mobile": "📱 Móviles",
   "workRewardTitle": "✅ ¡Recompensa de Trabajo Recogida!",
-  "workRewardContent": "Has recogido **{amount} <:blackToken:1304186797064065065>**.",
   "amountErrorNegativeNumberContent": "¡La cantidad debe ser un número positivo.",
   "amountErrorIntNumberContent": "¡La cantidad debe ser un número entero.",
   "cashOutButton": "Retirar 🛑",
@@ -175,8 +176,8 @@
       "name": "addmoney",
       "description": "💵 Añadir dinero a un usuario (solo para el creador del bot)"
     },
-    "language": {
-      "name": "language",
+    "setlang": {
+      "name": "setlang",
       "description": "🌐 Cambiar el idioma del bot"
     },
     "removemoney": {
@@ -223,6 +224,10 @@
       "name": "gift",
       "description": "🎁 Regala dinero a otro usuario"
     },
+    "weekly": {
+      "name": "weekly",
+      "description": "💎 Recoge tu recompensa semanal de 50,000 monedas."
+    },
     "help": {
       "name": "help",
       "description": "🆘 Mostrar comandos disponibles"
@@ -267,10 +272,10 @@
       "name": "minesweeper",
       "description": "💣 ¡Intenta evitar las bombas para aumentar tus ganancias!"
     },
-	"maintance": {
-  	  "name": "maintance",
-  	  "description": "🔧 Cambiar el estado del bot de mantenimiento (solo para el creador del bot)."
-	}
+    "maintance": {
+      "name": "maintance",
+      "description": "🔧 Cambiar el estado del bot de mantenimiento (solo para el creador del bot)."
+    }
   },
   "categories": {
     "users": "Usuarios",

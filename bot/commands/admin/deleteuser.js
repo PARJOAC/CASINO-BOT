@@ -15,9 +15,11 @@ module.exports = {
         .setRequired(true)
     ),
   category: "admin",
+  admin: true,
+  commandId: "1296240894214934529",
   async execute(interaction, client) {
     const lang = await getGuildLanguage(interaction.guild.id);
-            
+
     if (interaction.user.id !== "714376484139040809") {
       return interaction.editReply({
         embeds: [
@@ -34,8 +36,8 @@ module.exports = {
     }
 
     const targetUser = interaction.options.getUser("target");
-      
-    const isPlaying = await getSetUser(interaction, lang, targetUser.id);
+
+    const isPlaying = await getSetUser(lang, targetUser.id);
 
     if (isPlaying) {
       return interaction.editReply({

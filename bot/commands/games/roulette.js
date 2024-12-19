@@ -4,10 +4,11 @@ const {
 const { getGuildLanguage } = require("../../functions/getGuildLanguage");
 const { getDataUser } = require("../../functions/getDataUser");
 const { logEmbedLose, logEmbedWin } = require("../../functions/logEmbeds");
-const { maxBet } = require("../../functions/maxBet");
 const { winExperience } = require("../../functions/winExperience");
 const { interactionEmbed } = require("../../functions/interactionEmbed");
-const { addSet, delSet, getSet } = require("../../functions/getSet");
+const { delSet } = require("../../functions/getSet");
+const { initGame } = require("../../functions/initGame");
+const { wonItem } = require("../../functions/wonItem");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -39,51 +40,19 @@ module.exports = {
         .setRequired(false)
     ),
   category: "game",
+  commandId: "1296240894214934535",
   async execute(interaction, client) {
     const prediction = interaction.options.getString("prediction");
     const chosenNumber = interaction.options.getInteger("number");
     let betAmount = interaction.options.getString("bet");
     const lang = await getGuildLanguage(interaction.guild.id);
     let playerData = await getDataUser(interaction.user.id);
-      
-    const executing = await getSet(interaction, lang);
-    if (executing) {
-        return;
-    } else {
-        await addSet(interaction.user.id);
-    };
 
-    if (betAmount.toLowerCase() === "a") {
-      betAmount = playerData.balance;
-      if (betAmount <= 0) {
-        await delSet(interaction.user.id);
-        return interaction.editReply({
-          content: `<@${interaction.user.id}>`,
-          embeds: [
-            await interactionEmbed({
-              title: lang.errorTitle,
-              description: lang.errorEnoughMoneyContent,
-              color: 0xff0000,
-              footer: "CasinoBot",
-              client,
-            }),
-          ],
-          ephemeral: true,
-        });
-      }
-    } else {
-      const result = await maxBet(
-        playerData,
-        Number(betAmount),
-        lang,
-        interaction,
-        client
-      );
-      if (result) {
-        await delSet(interaction.user.id);
-        return;
-      }
-    }
+    let initGames = await initGame(betAmount, interaction, client, lang, playerData);
+
+    if (initGames.state) return;
+
+    betAmount = initGames.betAmount;
 
     const redNumbers = [
       1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36,
@@ -114,7 +83,7 @@ module.exports = {
           ephemeral: true,
         });
       }
-        
+
       if (prediction === "black" && !blackNumbers.includes(chosenNumber)) {
         return interaction.editReply({
           content: `<@${interaction.user.id}>`,
@@ -129,7 +98,7 @@ module.exports = {
           ephemeral: true,
         });
       }
-        
+
       if (prediction === "green" && chosenNumber !== 0) {
         return interaction.editReply({
           content: `<@${interaction.user.id}>`,
@@ -200,31 +169,7 @@ module.exports = {
           }
         }
 
-        let prob = Math.random();
-
-        if (prob <= 0.2) {
-          const items = ["balloons", "mobile"];
-          const randomIndex = Math.floor(Math.random() * items.length);
-          const itemWon = items[randomIndex];
-
-          playerData.swag[itemWon] += (playerData.swag[itemWon] || 0) + 1;
-          await playerData.save();
-
-          await interaction.followUp({
-            content: `<@${interaction.user.id}>`,
-            embeds: [
-              await interactionEmbed({
-                color: 0x00ff00,
-                description: itemWon === "balloons" ? lang.wonBalloon : lang.wonMobile,
-                footer: "CasinoBot",
-                client,
-              }),
-            ],
-            ephemeral: true,
-          });
-        }
-
-        await logEmbedWin(
+        logEmbedWin(
           "Roulette",
           betAmount,
           playerData.balance,
@@ -234,7 +179,7 @@ module.exports = {
 
         const xpGained = await winExperience(playerData, winnings);
 
-        interaction.editReply({
+        await interaction.editReply({
           content: `<@${interaction.user.id}>`,
           embeds: [
             await interactionEmbed({
@@ -290,11 +235,13 @@ module.exports = {
           ],
           ephemeral: false,
         });
+        await wonItem(playerData, interaction, lang, client);
+        return;
       } else {
         playerData.balance -= Math.trunc(betAmount);
         await playerData.save();
 
-        await logEmbedLose(
+        logEmbedLose(
           "Roulette",
           betAmount,
           playerData.balance,

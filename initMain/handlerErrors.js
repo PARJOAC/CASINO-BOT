@@ -5,7 +5,7 @@ const proceso = require("process");
 const logDir = path.join(__dirname, "logs");
 const logFile = path.join(logDir, "errorLogs.json");
 
-module.exports = async (client, interaction) => {
+module.exports = async () => {
   console.log("Error service started.");
 
   try {

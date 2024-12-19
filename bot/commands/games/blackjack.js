@@ -6,11 +6,12 @@ const {
 } = require("discord.js");
 const { getGuildLanguage } = require("../../functions/getGuildLanguage");
 const { getDataUser } = require("../../functions/getDataUser");
-const { logEmbedLose, logEmbedWin } = require("../../functions/logEmbeds");
-const { maxBet } = require("../../functions/maxBet");
+const { logEmbedLose, logEmbedWin, logEmbedTie } = require("../../functions/logEmbeds");
 const { winExperience } = require("../../functions/winExperience");
 const { interactionEmbed } = require("../../functions/interactionEmbed");
-const { addSet, delSet, getSet } = require("../../functions/getSet");
+const { delSet } = require("../../functions/getSet");
+const { initGame } = require("../../functions/initGame");
+const { wonItem } = require("../../functions/wonItem");
 
 const cardEmojis = {
   "A": "<:ace:1316169050899877919>",
@@ -76,50 +77,19 @@ module.exports = {
         .setDescription("Amount of money to bet (type 'a' to bet all)")
         .setRequired(true)
     ),
-  category: "game",
+  category: "games",
+  commandId: "1304549408553046119",
   async execute(interaction, client) {
+
     let betAmount = interaction.options.getString("bet");
-        const lang = await getGuildLanguage(interaction.guild.id);
-        let playerData = await getDataUser(interaction.user.id);
+    const lang = await getGuildLanguage(interaction.guild.id);
+    let playerData = await getDataUser(interaction.user.id);
 
-        const executing = await getSet(interaction, lang);
-    if (executing) {
-        return;
-    } else {
-        await addSet(interaction.user.id);
-    };
+    let initGames = await initGame(betAmount, interaction, client, lang, playerData);
 
-    if (betAmount.toLowerCase() === "a") {
-      betAmount = playerData.balance;
-      if (betAmount <= 0) {
-        await delSet(interaction.user.id);
-        return interaction.editReply({
-          content: `<@${interaction.user.id}>`,
-          embeds: [
-            await interactionEmbed({
-              title: lang.errorTitle,
-              description: lang.errorEnoughMoneyContent,
-              color: 0xff0000,
-              footer: "CasinoBot",
-              client,
-            }),
-          ],
-          ephemeral: true,
-        });
-      }
-    } else {
-      const result = await maxBet(
-        playerData,
-        Number(betAmount),
-        lang,
-        interaction,
-        client
-      );
-      if (result) {
-        await delSet(interaction.user.id);
-        return;
-      }
-    }
+    if (initGames.state) return;
+
+    betAmount = initGames.betAmount;
 
     const playerCards = [drawCard(), drawCard()];
     const dealerCards = [drawCard(), drawCard()];
@@ -172,8 +142,9 @@ module.exports = {
         if (playerScore > 21) {
           playerData.balance -= betAmount;
           await playerData.save();
-          await logEmbedLose("BlackJack", betAmount, playerData.balance, i);
-            
+
+          logEmbedLose("BlackJack", betAmount, playerData.balance, i);
+
           collector.stop();
 
           return i.editReply({
@@ -221,96 +192,113 @@ module.exports = {
         });
       }
       if (i.customId === "stand") {
-          await i.deferUpdate();
-          let winAmount = 0;
-          while (dealerScore < 17) {
-            dealerCards.push(drawCard());
-            dealerScore = calculateScore(dealerCards);
-          }
-
-          const finalDealerHand = dealerCards.map(displayCard).join(" ");
-          let resultEmbed;
-
-          if (dealerScore > 21 || playerScore > dealerScore) {
-            winAmount = Math.trunc(betAmount * (playerData.votes || 1));
-            playerData.balance += winAmount;
-            await playerData.save();
-
-            await logEmbedWin("BlackJack", betAmount, playerData.balance, winAmount, i);
-
-            const xpGained = await winExperience(playerData, winAmount);
-
-            resultEmbed = await interactionEmbed({
-              title: lang.winTitle,
-              description: lang.blackjackWinDescription,
-              color: 0x00ff00,
-              client,
-              footer: "CasinoBot",
-              fields: [
-                { name: lang.yourHand, value: `${playerCards.map(displayCard).join(" ")} - (${playerScore})`, inline: false },
-                { name: lang.dealerHand, value: `${finalDealerHand} - (${dealerScore})`, inline: false },
-                { name: lang.betField, value: `${betAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
-                { name: lang.winField, value: `${winAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
-                {
-                  name: lang.multiplierField,
-                  value: `x${playerData.votes || 1}`,
-                },
-                { name: lang.balanceField, value: `${playerData.balance.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
-                { name: lang.xpGained, value: `${xpGained.toLocaleString()} XP` },
-              ],
-            });
-          } else if (playerScore < dealerScore) {
-            playerData.balance -= betAmount;
-            await playerData.save();
-
-            await logEmbedLose("BlackJack", betAmount, playerData.balance, i);
-
-            resultEmbed = await interactionEmbed({
-              title: lang.youLose,
-              description: lang.blackjackLoseDescription,
-              color: 0xff0000,
-              client,
-              footer: "CasinoBot",
-              fields: [
-                { name: lang.yourHand, value: `${playerCards.map(displayCard).join(" ")} - (${playerScore})`, inline: false },
-                { name: lang.dealerHand, value: `${finalDealerHand} - (${dealerScore})`, inline: false },
-                { name: lang.betField, value: `${betAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
-                { name: lang.loseField, value: `${betAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
-                {
-                  name: lang.multiplierField,
-                  value: `x${playerData.votes || 1}`,
-                },
-                { name: lang.balanceField, value: `${playerData.balance.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
-              ],
-            });
-          } else {
-            await logEmbedWin("BlackJack", betAmount, playerData.balance, winAmount, i);
-            resultEmbed = await interactionEmbed({
-              title: lang.tieTitle,
-              color: 0x00ff00,
-              client,
-              footer: "CasinoBot",
-              fields: [
-                { name: lang.yourHand, value: `${playerCards.map(displayCard).join(" ")} - (${playerScore})`, inline: false },
-                { name: lang.dealerHand, value: `${finalDealerHand} - (${dealerScore})`, inline: false },
-                { name: lang.betField, value: `${betAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
-                {
-                  name: lang.multiplierField,
-                  value: `x${playerData.votes || 1}`,
-                },
-                { name: lang.balanceField, value: `${playerData.balance.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
-              ],
-            });
-          }
-
-          collector.stop();
-          return i.editReply({
-            content: `<@${i.user.id}>`,
-            embeds: [resultEmbed],
-            components: [],
-            ephemeral: false,
-          });
+        await i.deferUpdate();
+        let winAmount = 0;
+        while (dealerScore < 17) {
+          dealerCards.push(drawCard());
+          dealerScore = calculateScore(dealerCards);
         }
+
+        const finalDealerHand = dealerCards.map(displayCard).join(" ");
+        let resultEmbed;
+
+        collector.stop();
+
+        if (dealerScore > 21 || playerScore > dealerScore) {
+          winAmount = Math.trunc(betAmount * (playerData.votes || 1));
+          playerData.balance += winAmount;
+          await playerData.save();
+
+          logEmbedWin("BlackJack", betAmount, playerData.balance, winAmount, i);
+
+          const xpGained = await winExperience(playerData, winAmount);
+
+          await i.editReply({
+            content: `<@${i.user.id}>`,
+            embeds: [
+              await interactionEmbed({
+                title: lang.winTitle,
+                description: lang.blackjackWinDescription,
+                color: 0x00ff00,
+                client,
+                footer: "CasinoBot",
+                fields: [
+                  { name: lang.yourHand, value: `${playerCards.map(displayCard).join(" ")} - (${playerScore})`, inline: false },
+                  { name: lang.dealerHand, value: `${finalDealerHand} - (${dealerScore})`, inline: false },
+                  { name: lang.betField, value: `${betAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
+                  { name: lang.winField, value: `${winAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
+                  {
+                    name: lang.multiplierField,
+                    value: `x${playerData.votes || 1}`,
+                  },
+                  { name: lang.balanceField, value: `${playerData.balance.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
+                  { name: lang.xpGained, value: `${xpGained.toLocaleString()} XP` },
+                ],
+              })
+            ],
+            components: [],
+          })
+          await wonItem(playerData, i, lang, client);
+          return;
+        } else if (playerScore < dealerScore) {
+          playerData.balance -= betAmount;
+          await playerData.save();
+
+          logEmbedLose("BlackJack", betAmount, playerData.balance, i);
+
+          await i.editReply({
+            content: `<@${i.user.id}>`,
+            embeds: [
+              await interactionEmbed({
+                title: lang.youLose,
+                description: lang.blackjackLoseDescription,
+                color: 0xff0000,
+                client,
+                footer: "CasinoBot",
+                fields: [
+                  { name: lang.yourHand, value: `${playerCards.map(displayCard).join(" ")} - (${playerScore})`, inline: false },
+                  { name: lang.dealerHand, value: `${finalDealerHand} - (${dealerScore})`, inline: false },
+                  { name: lang.betField, value: `${betAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
+                  { name: lang.loseField, value: `${betAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
+                  {
+                    name: lang.multiplierField,
+                    value: `x${playerData.votes || 1}`,
+                  },
+                  { name: lang.balanceField, value: `${playerData.balance.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
+                ],
+              })
+            ],
+            components: []
+          })
+          return;
+        } else {
+          logEmbedTie("BlackJack", betAmount, playerData.balance, i);
+
+          await i.editReply({
+            content: `<@${i.user.id}>`,
+            embeds: [
+              await interactionEmbed({
+                title: lang.tieTitle,
+                color: 0x00ff00,
+                client,
+                footer: "CasinoBot",
+                fields: [
+                  { name: lang.yourHand, value: `${playerCards.map(displayCard).join(" ")} - (${playerScore})`, inline: false },
+                  { name: lang.dealerHand, value: `${finalDealerHand} - (${dealerScore})`, inline: false },
+                  { name: lang.betField, value: `${betAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
+                  {
+                    name: lang.multiplierField,
+                    value: `x${playerData.votes || 1}`,
+                  },
+                  { name: lang.balanceField, value: `${playerData.balance.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
+                ],
+              })
+            ],
+            components: [],
+          })
+          return;
+        }
+      }
     });
 
     collector.on("end", async (collected, reason) => {

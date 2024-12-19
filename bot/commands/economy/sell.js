@@ -25,19 +25,20 @@ module.exports = {
         .setRequired(true)
     ),
   category: "economy",
+  commandId: "1296240894214934532",
   async execute(interaction, client) {
     const lang = await getGuildLanguage(interaction.guild.id);
-     
+
     const executing = await getSet(interaction, lang, interaction.user.id);
     if (executing) {
-        return;
+      return;
     } else {
-        await addSet(interaction.user.id);
+      await addSet(interaction.user.id);
     };
-      
+
     const item = interaction.options.getString("item");
     const quantity = interaction.options.getInteger("quantity");
-      
+
     if (quantity <= 0) {
       await delSet(interaction.user.id);
       return interaction.editReply({
@@ -121,7 +122,7 @@ module.exports = {
 
     player.balance += amountGained;
     await player.save();
-     
+
     await delSet(interaction.user.id);
 
     return interaction.editReply({

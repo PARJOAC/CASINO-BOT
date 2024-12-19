@@ -1,16 +1,13 @@
 const {
-    SlashCommandBuilder,
-    ActionRowBuilder,
-    ButtonBuilder,
-    ButtonStyle,
+    SlashCommandBuilder
 } = require("discord.js");
 const { getGuildLanguage } = require("../../functions/getGuildLanguage");
 const { getDataUser } = require("../../functions/getDataUser");
 const { logEmbedLose, logEmbedWin } = require("../../functions/logEmbeds");
-const { maxBet } = require("../../functions/maxBet");
 const { winExperience } = require("../../functions/winExperience");
 const { interactionEmbed } = require("../../functions/interactionEmbed");
-const { addSet, delSet, getSet } = require("../../functions/getSet");
+const { initGame } = require("../../functions/initGame");
+const { wonItem } = require("../../functions/wonItem");
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -28,70 +25,34 @@ module.exports = {
                 .setDescription("Choose between head or tail")
                 .setRequired(true)
                 .addChoices(
-                    { name: "Head", value: "0" },
-                    { name: "Tail", value: "1" }
+                    { name: "Head", value: "head" },
+                    { name: "Tail", value: "tail" }
                 )
         ),
     category: "game",
+    commandId: "1310895925610287135",
     async execute(interaction, client) {
         let betAmount = interaction.options.getString("bet");
-        const prediction = interaction.options.getString("prediction");
+        let prediction = interaction.options.getString("prediction");
         const lang = await getGuildLanguage(interaction.guild.id);
         let playerData = await getDataUser(interaction.user.id);
 
-        const executing = await getSet(interaction, lang);
-    if (executing) {
-        return;
-    } else {
-        await addSet(interaction.user.id);
-    };
+        let initGames = await initGame(betAmount, interaction, client, lang, playerData);
 
-    if (betAmount.toLowerCase() === "a") {
-      betAmount = playerData.balance;
-      if (betAmount <= 0) {
-        await delSet(interaction.user.id);
-        return interaction.editReply({
-          content: `<@${interaction.user.id}>`,
-          embeds: [
-            await interactionEmbed({
-              title: lang.errorTitle,
-              description: lang.errorEnoughMoneyContent,
-              color: 0xff0000,
-              footer: "CasinoBot",
-              client,
-            }),
-          ],
-          ephemeral: true,
-        });
-      }
-    } else {
-      const result = await maxBet(
-        playerData,
-        Number(betAmount),
-        lang,
-        interaction,
-        client
-      );
-      if (result) {
-        await delSet(interaction.user.id);
-        return;
-      }
-    }
+        if (initGames.state) return;
+
+        betAmount = initGames.betAmount;
 
         const fecha = new Date();
         playerData.lastCoinFlip = fecha;
         await playerData.save();
 
-        let coinFlipResult = Math.random() < 0.5 ? 0 : 1;
+        let coinFlipResult = Math.random() < 0.5 ? "head" : "tail";
 
         const headEmoji = "<:cara:1310711659316379751>";
         const tailEmoji = "<:cruz:1310711628857217065>";
 
-        const isWin = coinFlipResult == Number(prediction);
-
-        let resultMessage = isWin
-            ? headEmoji
-            : tailEmoji;
+        const isWin = coinFlipResult == prediction;
 
         let winAmount = Math.trunc(betAmount * (playerData.votes || 1));
         await interaction.editReply({
@@ -102,7 +63,8 @@ module.exports = {
                     footer: "CasinoBot",
                     client
                 })
-            ] });
+            ]
+        });
 
         if (isWin) {
             playerData.balance += winAmount;
@@ -110,33 +72,36 @@ module.exports = {
 
             let xpGained = await winExperience(playerData, betAmount);
 
-            await logEmbedWin("CoinFlip", betAmount, playerData.balance, winAmount, interaction);
+            logEmbedWin("CoinFlip", betAmount, playerData.balance, winAmount, interaction);
 
-            return interaction.editReply({
+            await interaction.editReply({
                 content: `<@${interaction.user.id}>`,
-                embeds: [ 
+                embeds: [
                     await interactionEmbed({
-                    	title: lang.winTitle,
-                    	color: 0x00ff00,
-                    	client,
-                    	footer: "CasinoBot",
-                    	fields: [
-                        	{ name: lang.userChoiceField, value: (prediction == 1 ? tailEmoji : headEmoji), inline: false },
-                        	{ name: lang.resultSpin, value: resultMessage, inline: false },
-                        	{ name: lang.betField, value: `${betAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
-                        	{ name: lang.winField, value: `${winAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
-                        	{ name: lang.multiplierField, value: `x${playerData.votes || 1}`, inline: false },
-                        	{ name: lang.balanceField, value: `${playerData.balance.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
-                        	{ name: lang.xpGained, value: `${xpGained.toLocaleString()} XP` },
-                    	],
-                	})
+                        title: lang.winTitle,
+                        color: 0x00ff00,
+                        client,
+                        footer: "CasinoBot",
+                        fields: [
+                            { name: lang.userChoiceField, value: prediction === "head" ? headEmoji : tailEmoji, inline: false },
+                            { name: lang.resultSpin, value: prediction === "head" ? headEmoji : tailEmoji, inline: false },
+                            { name: lang.betField, value: `${betAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
+                            { name: lang.winField, value: `${winAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
+                            { name: lang.multiplierField, value: `x${playerData.votes || 1}`, inline: false },
+                            { name: lang.balanceField, value: `${playerData.balance.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
+                            { name: lang.xpGained, value: `${xpGained.toLocaleString()} XP` },
+                        ],
+                    })
                 ]
             })
+            await wonItem(playerData, interaction, lang, client);
+            return;
         } else {
             playerData.balance -= betAmount;
             await playerData.save();
 
-            await logEmbedLose("CoinFlip", betAmount, playerData.balance, interaction);
+            logEmbedLose("CoinFlip", betAmount, playerData.balance, interaction);
+
             return interaction.editReply({
                 content: `<@${interaction.user.id}>`,
                 embeds: [
@@ -146,11 +111,11 @@ module.exports = {
                         client,
                         footer: "CasinoBot",
                         fields: [
-                            { name: lang.userChoiceField, value: (prediction == 1 ? tailEmoji : headEmoji), inline: false },
-                            { name: lang.resultSpin, value: resultMessage, inline: false },
+                            { name: lang.userChoiceField, value: prediction === "head" ? headEmoji : tailEmoji, inline: false },
+                            { name: lang.resultSpin, value: prediction === "head" && isWin == true ? tailEmoji : headEmoji, inline: false },
                             { name: lang.betField, value: `${betAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
                             { name: lang.loseField, value: `${betAmount.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
-                            { name: lang.multiplierField, value: `x${playerData.votes || 1}`, inline: false},
+                            { name: lang.multiplierField, value: `x${playerData.votes || 1}`, inline: false },
                             { name: lang.balanceField, value: `${playerData.balance.toLocaleString()} <:blackToken:1304186797064065065>`, inline: false },
                         ],
                     })

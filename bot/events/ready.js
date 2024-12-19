@@ -7,49 +7,44 @@ module.exports = {
   once: true,
   async execute(client) {
     console.log(`Session started as ${client.user.tag}!`);
-      
+
+    client.user.setActivity(`Type /help for commands 🎉`, { type: ActivityType.Custom });
+
     const guild = client.guilds.cache.get(process.env.GUILD_ID);
-    const channel = guild.channels.cache.get(process.env.VOICE_CHANNEL_MUSIC);
+
     const connection = joinVoiceChannel({
-        channelId: process.env.VOICE_CHANNEL_MUSIC,
-        guildId: process.env.GUILD_ID,
-        adapterCreator: guild.voiceAdapterCreator,
+      channelId: process.env.VOICE_CHANNEL_MUSIC,
+      guildId: process.env.GUILD_ID,
+      adapterCreator: guild.voiceAdapterCreator,
     });
 
     const player = createAudioPlayer();
-
     const audioPath = path.join(__dirname, '..', '..', 'initMain', 'music', 'casinoMusic.mp3');
 
+    const createNewResource = () => createAudioResource(audioPath);
+
     const playAudio = () => {
-        const resource = createAudioResource(audioPath);
+      if (player.state.status !== AudioPlayerStatus.Playing) {
+        const resource = createNewResource(); // Create a new resource
         player.play(resource);
+      }
     };
 
+    // Listen for the "Idle" status to play the audio again
     player.on(AudioPlayerStatus.Idle, () => {
-        playAudio();
+      playAudio();
     });
 
+    // Handle errors in the audio player
+    player.on('error', error => {
+      console.error(`Error in audio player: ${error.message}`);
+    });
+
+    // Subscribe the player to the voice connection
     connection.subscribe(player);
 
+    // Start playing the audio
     playAudio();
 
-    let currentTextIndex = 0;
-
-    const updateActivity = () => {
-        const a = client.guilds.cache.size;
-
-        const fullText = `Type /help and viewing your earnings from {a} servers `.replace("{a}", a);
-
-        const movingText = fullText.slice(currentTextIndex) + fullText.slice(0, currentTextIndex);
-
-        client.user.setActivity(movingText, { type: ActivityType.Custom });
-
-        currentTextIndex++;
-        if (currentTextIndex >= fullText.length) {
-            currentTextIndex = 0;
-        }
-    };
-
-    setInterval(updateActivity, 2500);
   }
-}
+};

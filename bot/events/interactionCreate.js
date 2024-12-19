@@ -15,16 +15,16 @@ module.exports = {
         if (!interaction.isChatInputCommand()) return;
         const command = client.commands.get(interaction.commandName);
         if (!command) return;
-        
+
         if (!interaction.guild) {
             return interaction.reply({
                 content: "This command can only be used within a server.",
                 ephemeral: true,
             });
         }
-        
+
         const lang = await getGuildLanguage(interaction.guild.id);
-        
+
         let status = await Status.findOne();
         if (!status) {
             status = new Status({ statusBot: false });
@@ -42,7 +42,7 @@ module.exports = {
                         client,
                         fields: [
                             { name: "Why Maintenance?", value: "We're working to improve the bot's performance and introduce exciting new features!", inline: false },
-                            { name: "Need Help?", value: "Feel free to ask questions or report issues in our support server. We'll get back to you as soon as possible!", inline: false}
+                            { name: "Need Help?", value: "Feel free to ask questions or report issues in our support server. We'll get back to you as soon as possible!", inline: false }
                         ]
                     })
                 ],
@@ -59,6 +59,7 @@ module.exports = {
             PermissionsBitField.Flags.UseApplicationCommands,
             PermissionsBitField.Flags.UseExternalStickers,
             PermissionsBitField.Flags.SendMessagesInThreads,
+            PermissionsBitField.Flags.ReadMessageHistory,
         ];
 
         const permissionNames = {
@@ -70,6 +71,8 @@ module.exports = {
             [PermissionsBitField.Flags.UseApplicationCommands]: "Use Application Commands",
             [PermissionsBitField.Flags.UseExternalStickers]: "Use External Stickers",
             [PermissionsBitField.Flags.SendMessagesInThreads]: "Send Messages in Threads",
+            [PermissionsBitField.Flags.ReadMessageHistory]: "Read Message History"
+
         };
 
         const botPermissions = interaction.channel.permissionsFor(client.user);
@@ -112,29 +115,33 @@ module.exports = {
                 await delSet(interaction.user.id);
                 return;
             }
-            
-        }
-try {
-    logCommand(interaction.commandName, interaction);
-    await getDataUser(interaction.user.id);
-    await command.execute(interaction, client);
-} catch (error) {
-    console.log(error)
-    await delSet(interaction.user.id);
-    const errorEmbed = await interactionEmbed({
-        title: lang.errorTitle,
-        color: 0xff0000,
-        description: lang.errorCommand,
-        footer: "CasinoBot",
-        client,
-    });
 
-    if (interaction.replied || interaction.deferred) {
-        await interaction.followUp({ embeds: [errorEmbed], ephemeral: true });
-    } else {
-        await interaction.editReply({ embeds: [errorEmbed], ephemeral: true });
-    }
-}
+        }
+        try {
+            logCommand(interaction.commandName, interaction);
+            await getDataUser(interaction.user.id);
+            command.execute(interaction, client);
+        } catch (error) {
+
+            await delSet(interaction.user.id);
+            if (!interaction.isRepliable()) return;
+
+            const errorEmbed = await interactionEmbed({
+                title: lang.errorTitle,
+                color: 0xff0000,
+                description: lang.errorCommand,
+                footer: "CasinoBot",
+                client,
+            });
+
+            console.log(error)
+
+            if (interaction.replied || interaction.deferred) {
+                await interaction.followUp({ embeds: [errorEmbed], ephemeral: true });
+            } else {
+                await interaction.editReply({ embeds: [errorEmbed], ephemeral: true });
+            }
+        }
 
     },
 };

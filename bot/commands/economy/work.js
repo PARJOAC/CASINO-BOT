@@ -9,16 +9,17 @@ module.exports = {
     .setName("work")
     .setDescription("Work and earn 1000 coins!"),
   category: "economy",
+  commandId: "1298755907991113758",
   async execute(interaction, client) {
     const lang = await getGuildLanguage(interaction.guild.id);
-      
+
     const executing = await getSet(interaction, lang, interaction.user.id);
     if (executing) {
-        return;
+      return;
     } else {
-        await addSet(interaction.user.id);
+      await addSet(interaction.user.id);
     };
-      
+
     let playerData = await getDataUser(interaction.user.id);
 
     const rewardAmount = 1000;
@@ -33,7 +34,7 @@ module.exports = {
       const timeLeft = cooldownTime - (currentTime - playerData.lastWork);
       const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
       const seconds = Math.floor((timeLeft / 1000) % 60);
-        
+
       await delSet(interaction.user.id);
 
       return interaction.editReply({
@@ -55,14 +56,14 @@ module.exports = {
     playerData.balance += rewardAmount;
     playerData.lastWork = currentTime;
     await playerData.save();
-    
+
     await delSet(interaction.user.id);
 
     return interaction.editReply({
       embeds: [
         await interactionEmbed({
           title: lang.workRewardTitle,
-          description: lang.workRewardContent.replace(
+          description: lang.economyRewardContent.replace(
             "{amount}",
             rewardAmount.toLocaleString()
           ),

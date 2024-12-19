@@ -6,10 +6,10 @@ const { addSet, delSet, getSet } = require("../../functions/getSet");
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName("daily")
-    .setDescription("Collect your daily reward of 10,000 coins"),
+    .setName("weekly")
+    .setDescription("Collect your weekly reward of 50,000 coins"),
   category: "economy",
-  commandId: "1296240894214934531",
+  commandId: "1318240685924810815",
   async execute(interaction, client) {
     const lang = await getGuildLanguage(interaction.guild.id);
 
@@ -18,20 +18,21 @@ module.exports = {
       return;
     } else {
       await addSet(interaction.user.id);
-    };
+    }
 
     let playerData = await getDataUser(interaction.user.id);
 
-    const rewardAmount = 10000;
+    const rewardAmount = 50000;
 
     const currentTime = new Date();
-    const cooldownTime = 86400000;
+    const cooldownTime = 604800000;
 
     if (
-      playerData.lastDaily &&
-      currentTime - playerData.lastDaily < cooldownTime
+      playerData.lastWeekly &&
+      currentTime - playerData.lastWeekly < cooldownTime
     ) {
-      const timeLeft = cooldownTime - (currentTime - playerData.lastDaily);
+      const timeLeft = cooldownTime - (currentTime - playerData.lastWeekly);
+      const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
       const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
       const seconds = Math.floor((timeLeft / 1000) % 60);
@@ -42,7 +43,8 @@ module.exports = {
         embeds: [
           await interactionEmbed({
             title: lang.cooldownActiveTitle,
-            description: lang.cooldownTimeContentDaily
+            description: lang.cooldownTimeContentWeekly
+              .replace("{days}", days)
               .replace("{hours}", hours)
               .replace("{minutes}", minutes)
               .replace("{seconds}", seconds),
@@ -56,7 +58,7 @@ module.exports = {
     }
 
     playerData.balance += rewardAmount;
-    playerData.lastDaily = currentTime;
+    playerData.lastWeekly = currentTime;
     await playerData.save();
 
     await delSet(interaction.user.id);
@@ -64,7 +66,7 @@ module.exports = {
     return interaction.editReply({
       embeds: [
         await interactionEmbed({
-          title: lang.dailyRewardTitle,
+          title: lang.weeklyRewardTitle,
           description: lang.economyRewardContent.replace(
             "{amount}",
             rewardAmount.toLocaleString()

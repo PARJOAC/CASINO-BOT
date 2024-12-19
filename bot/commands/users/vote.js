@@ -14,21 +14,22 @@ module.exports = {
     .setDescription(
       "Vote for the bot on top.gg to support its growth and get rewards!"
     ),
-
+  category: "users",
+  commandId: "1307993499874099243",
   async execute(interaction, client) {
     const lang = await getGuildLanguage(interaction.guild.id);
     const executing = await getSet(interaction, lang);
     if (executing) {
-        return;
+      return;
     } else {
-        await addSet(interaction.user.id);
+      await addSet(interaction.user.id);
     };
-      
+
     const botID = process.env.BOT_ID;
     const userID = interaction.user.id;
     const topggUrl = `https://top.gg/bot/${botID}/vote`;
     const topggAPIUrl = `https://top.gg/api/bots/${botID}/check?userId=${userID}`;
-   
+
     if (executingUsers.has(userID)) {
       return interaction.editReply({
         content: lang.alreadyExecutingCommand,
